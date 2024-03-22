@@ -20,6 +20,8 @@ const config: Config = {
         "hero-pattern-3": "url('/img/cat-han-VgyN_CWXQVM-unsplash.jpg')",
         "hero-pattern-4": "url('/img/spacejoy-FX61rYaAfCQ-unsplash.jpg')",
         "hero-pattern-5": "url('/img/spacejoy-9M66C_w_ToM-unsplash.jpg')",
+        "hero-pattern-6":
+          "url('/img/francesca-tosolini-rYZkQdz2t9o-unsplash.jpg')",
       },
       translate: {
         100: "100%",
@@ -75,6 +77,20 @@ const config: Config = {
       black: colors.black,
       transparent: "transparent",
       current: "currentColor",
+      green: {
+        500: "#10B981",
+      },
+      teal: {
+        800: "#115E59",
+      },
+      stone: {
+        50: "#fafaf9",
+        100: "#f5f5f4",
+        200: "#e7e5e4",
+      },
+      orange: {
+        50: "rgba(255, 247, 237, 0.8)",
+      },
       // Configure your color palette here
     },
   },

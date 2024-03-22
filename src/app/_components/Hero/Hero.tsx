@@ -121,6 +121,7 @@ function Dots({
             className={`h-2 rounded-full ${
               index == currentIndex ? "w-16" : "w-2"
             } ${index == currentIndex ? "animate-progress" : "bg-white"}`}
+            key={index}
           ></div>
         );
       })}
