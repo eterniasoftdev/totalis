@@ -2,10 +2,11 @@ import Appointment from "@/app/_components/Appointment/Page";
 import Hero from "@/app/_components/Hero/Hero";
 import Hero2 from "@/app/_components/Hero2/page";
 import Stories from "@/app/_components/Stories/page";
-import Image from "next/image";
+// import Image from "next/image";
 import Solutions from "./_components/Solutions/Page";
 import ContactUs from "./_components/ContactUs/Page";
 import Applications from "./_components/Applications/Page";
+// import StickyNav from "./_components/StickyEnquiry/Page";
 
 export default function Home() {
   return (

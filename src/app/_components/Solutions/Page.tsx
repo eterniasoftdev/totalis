@@ -24,7 +24,7 @@ function Solutions() {
           touched.
         </p>
         <div className="w-1/5">
-          <Button_Secondary text="VIEW ALL" />
+          {/* <Button_Secondary text="VIEW ALL" /> */}
         </div>
       </div>
       <div className="flex flex-row gap-12">
@@ -54,7 +54,7 @@ function Solutions() {
                   />
                   <p className="tracking-wider">{solution.caption}</p>
                   <p className="text-gray-600">
-                    {solution.place} ({solution.country})
+                    {/* {solution.place} ({solution.country}) */}
                   </p>
                 </div>
               );

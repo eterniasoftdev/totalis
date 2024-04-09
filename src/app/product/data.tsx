@@ -1,54 +1,152 @@
+export interface individualProductType {
+  imageURL: string[];
+  assembly: Array<{ imageurl: string; title: string }>;
+  typologies: Array<{ imageurl: string; title: string }>;
+  title: string;
+  subtitle: string;
+  description: string;
+  name: string;
+  key: string;
+  specification: string[];
+  performanceParameters: Array<{ value: string; subValue: string }>;
+}
 export interface productInterface {
   [key: string]: {
-    [key: string]: Array<{
-      imageURL: string[];
-      title: string;
-      subtitle: string;
-      description: string;
-      name: string;
-      key: string;
-      specification: string[];
-      performanceParameters: Array<{ value: string; subValue: string }>;
-    }>;
+    [key: string]: Array<individualProductType>;
   };
 }
 export const products: productInterface = {
-  windows: {
-    "Sliding Windows": [
+  Sliding: {
+    "TOT-SD Lite": [
       {
         imageURL: [
-          "/img/Collaterals/stock-photo-closeup-of-plastic-pvc-window-with-white-metal-frame-and-handle-installed-at-house-view-on-blurred-2206747419.jpg",
-          "/img/Collaterals/stock-photo-aluminum-window-with-cock-spur-window-handle-on-an-aluminium-window-with-mountain-view-782963743.jpg",
-          "/img/Collaterals/stock-photo-closeup-of-plastic-pvc-window-with-white-metal-frame-and-handle-installed-at-house-view-on-blurred-2206747419.jpg",
-          "/img/Collaterals/stock-photo-aluminum-window-with-cock-spur-window-handle-on-an-aluminium-window-with-mountain-view-782963743.jpg",
-          "/img/Collaterals/stock-photo-closeup-of-plastic-pvc-window-with-white-metal-frame-and-handle-installed-at-house-view-on-blurred-2206747419.jpg",
-          "/img/Collaterals/stock-photo-aluminum-window-with-cock-spur-window-handle-on-an-aluminium-window-with-mountain-view-782963743.jpg",
+          "/img/products/tot_sd_lite/general/declan-sun-x50nOv5eXEw-unsplash.jpg",
+          "/img/products/tot_sd_lite/general/nastuh-abootalebi-yWwob8kwOCk-unsplash.jpg",
+          "/img/products/tot_sd_lite/general/r-mo-w-_iZqdviAo-unsplash.jpg",
+          "/img/products/tot_sd_lite/general/s-group-official-pqRud0Gx-dg-unsplash.jpg",
         ],
-        title: "Title",
-        subtitle: "Subtitle",
+        assembly: [
+          {
+            imageurl:
+              "/img/products/tot_sd_lite/assemblies/Screenshot 2024-03-28 103851.png",
+            title: "",
+          },
+          {
+            imageurl:
+              "/img/products/tot_sd_lite/assemblies/Screenshot 2024-03-28 104034.png",
+            title: "",
+          },
+        ],
+        typologies: [
+          {
+            imageurl:
+              "/img/products/tot_sd_lite/typologies/Screenshot 2024-03-28 104315.png",
+            title: "",
+          },
+          {
+            imageurl:
+              "/img/products/tot_sd_lite/typologies/Screenshot 2024-03-28 104413.png",
+            title: "",
+          },
+          {
+            imageurl:
+              "/img/products/tot_sd_lite/typologies/Screenshot 2024-03-28 104538.png",
+            title: "",
+          },
+          {
+            imageurl:
+              "/img/products/tot_sd_lite/typologies/Screenshot 2024-03-28 104640.png",
+            title: "",
+          },
+          {
+            imageurl:
+              "/img/products/tot_sd_lite/typologies/Screenshot 2024-03-28 104721.png",
+            title: "",
+          },
+          {
+            imageurl:
+              "/img/products/tot_sd_lite/typologies/Screenshot 2024-03-28 104807.png",
+            title: "",
+          },
+        ],
+        title: "Sliding Windows",
+        subtitle: "TOT-SD LITE",
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco ",
         name: "TOT-SD LITE",
         key: "TOT-SD LITE",
         specification: [
-          "Specification 1",
-          "Specification 2",
-          "Specification 3",
+          "Max Sash Height (mm): 1500",
+          "Max Sash Width (mm): 800",
+          "Glass Range (mm): 4-6",
         ],
         performanceParameters: [
-          { value: "Main value: 123Kg", subValue: "Sub value" },
-          { value: "Main value: 200Kg", subValue: "Sub value" },
-          { value: "Main value: 300Kg", subValue: "Sub value" },
+          {
+            value: "Windload: 1.6 kpa",
+            subValue: "as per class 4A (BS EN12210: 2000)",
+          },
+          {
+            value: "Air Tightness: 150 Pa",
+            subValue: "as per class 2 (BS EN12207: 2000)",
+          },
+          {
+            value: "Water Tightness: 150 Pa",
+            subValue: "as per Class 4A (BS EN12207:2000)",
+          },
         ],
       },
+    ],
+    "TOT-SD": [
       {
         imageURL: [
-          "/img/Collaterals/stock-photo-glass-window-frame-house-interior-on-white-wall-1947458206.jpg",
-          "/img/Collaterals/stock-photo-aluminum-window-with-cock-spur-window-handle-on-an-aluminium-window-with-mountain-view-782963743.jpg",
-          "/img/Collaterals/stock-photo-closeup-of-plastic-pvc-window-with-white-metal-frame-and-handle-installed-at-house-view-on-blurred-2206747419.jpg",
-          "/img/Collaterals/stock-photo-aluminum-window-with-cock-spur-window-handle-on-an-aluminium-window-with-mountain-view-782963743.jpg",
-          "/img/Collaterals/stock-photo-closeup-of-plastic-pvc-window-with-white-metal-frame-and-handle-installed-at-house-view-on-blurred-2206747419.jpg",
-          "/img/Collaterals/stock-photo-aluminum-window-with-cock-spur-window-handle-on-an-aluminium-window-with-mountain-view-782963743.jpg",
+          "/img/products/tot_sd/general/med-badr-chemmaoui-xtDpXi_a-YQ-unsplash.jpg",
+          "/img/products/tot_sd/general/stephan-cassara-u1AV4Xc30cs-unsplash.jpg",
+          "/img/products/tot_sd/general/stock-photo-glazed-terrace-in-the-countryside-with-sliding-glass-1375252976.jpg",
+          "/img/products/tot_sd/general/yum-cheol-ho-LumHIwjuQeA-unsplash.jpg",
+        ],
+        typologies: [
+          {
+            imageurl:
+              "/img/products/tot_sd/typologies/Screenshot 2024-04-08 193614.png",
+            title: "",
+          },
+          {
+            imageurl:
+              "/img/products/tot_sd/typologies/Screenshot 2024-04-08 193614Screenshot 2024-04-08 193658.png",
+            title: "",
+          },
+          {
+            imageurl:
+              "/img/products/tot_sd/typologies/Screenshot 2024-04-08 193721.png",
+            title: "",
+          },
+          {
+            imageurl:
+              "/img/products/tot_sd/typologies/Screenshot 2024-04-08 193758.png",
+            title: "",
+          },
+          {
+            imageurl:
+              "/img/products/tot_sd/typologies/Screenshot 2024-04-08 193815.png",
+            title: "",
+          },
+          {
+            imageurl:
+              "/img/products/tot_sd/typologies/Screenshot 2024-04-08 193831.png",
+            title: "",
+          },
+        ],
+        assembly: [
+          {
+            imageurl:
+              "/img/products/tot_sd/assembly/Screenshot 2024-04-08 193244.png",
+            title: "",
+          },
+          {
+            imageurl:
+              "/img/products/tot_sd/assembly/Screenshot 2024-04-08 193340.png",
+            title: "",
+          },
         ],
         title: "Title",
         subtitle: "Subtitle",
@@ -57,173 +155,197 @@ export const products: productInterface = {
         name: "TOT-SD",
         key: "TOT-SD",
         specification: [
-          "Specification 1",
-          "Specification 2",
-          "Specification 3",
+          "Max Sash Height (mm): 2100",
+          "Max Sash Width (mm): 1000",
+          "Glass Range (mm): 5, 6, 8",
         ],
         performanceParameters: [
-          { value: "Main value: 123Kg", subValue: "Sub value" },
-          { value: "Main value: 200Kg", subValue: "Sub value" },
-          { value: "Main value: 300Kg", subValue: "Sub value" },
+          {
+            value: "Windload: 1.6 kpa",
+            subValue: "as per Class 4A (BS EN12210: 2000)",
+          },
+          {
+            value: "Air Tightness: 150 Pa",
+            subValue: "as per class 2 (BS EN12207: 2000)",
+          },
+          {
+            value: "Water Tightness: 150 Pa",
+            subValue: "as per Class 4A (BS EN12207: 2000)",
+          },
         ],
       },
     ],
-    "Openable Windows": [
+    "TOT-SD PLUS": [
       {
         imageURL: [
-          "/img/Collaterals/stock-photo-four-panels-commercial-aluminium-frame-bi-fold-doors-642894877.jpg",
-          "/img/Collaterals/stock-photo-aluminum-window-with-cock-spur-window-handle-on-an-aluminium-window-with-mountain-view-782963743.jpg",
-          "/img/Collaterals/stock-photo-closeup-of-plastic-pvc-window-with-white-metal-frame-and-handle-installed-at-house-view-on-blurred-2206747419.jpg",
-          "/img/Collaterals/stock-photo-aluminum-window-with-cock-spur-window-handle-on-an-aluminium-window-with-mountain-view-782963743.jpg",
-          "/img/Collaterals/stock-photo-closeup-of-plastic-pvc-window-with-white-metal-frame-and-handle-installed-at-house-view-on-blurred-2206747419.jpg",
-          "/img/Collaterals/stock-photo-aluminum-window-with-cock-spur-window-handle-on-an-aluminium-window-with-mountain-view-782963743.jpg",
+          "/img/products/tot_sd_plus/general/don-kaveen-NFbwes_e-jI-unsplash.jpg",
+          "/img/products/tot_sd_plus/general/portrait1.jpg",
+          "/img/products/tot_sd_plus/general/webaliser-_TPTXZd9mOo-unsplash.jpg",
+          "/img/products/tot_sd_plus/general/webaliser-_TPTXZd9mOo-unsplash.jpg",
+        ],
+        typologies: [
+          {
+            imageurl:
+              "/img/products/tot_sd_plus/typologies/Screenshot 2024-04-08 194253.png",
+            title: "",
+          },
+          {
+            imageurl:
+              "/img/products/tot_sd_plus/typologies/Screenshot 2024-04-08 194304.png",
+            title: "",
+          },
+          {
+            imageurl:
+              "/img/products/tot_sd_plus/typologies/Screenshot 2024-04-08 194335.png",
+            title: "",
+          },
+          {
+            imageurl:
+              "/img/products/tot_sd_plus/typologies/Screenshot 2024-04-08 194356.png",
+            title: "",
+          },
+          {
+            imageurl:
+              "/img/products/tot_sd_plus/typologies/Screenshot 2024-04-08 194416.png",
+            title: "",
+          },
+          {
+            imageurl:
+              "/img/products/tot_sd_plus/typologies/Screenshot 2024-04-08 194319.png",
+            title: "",
+          },
+        ],
+        assembly: [
+          {
+            imageurl:
+              "/img/products/tot_sd_plus/assembly/Screenshot 2024-04-08 194200.png",
+            title: "",
+          },
+          {
+            imageurl:
+              "/img/products/tot_sd_plus/assembly/Screenshot 2024-04-08 194217.png",
+            title: "",
+          },
         ],
         title: "Title",
         subtitle: "Subtitle",
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco ",
-        name: "ETP CS",
-        key: "ETP CS",
+        name: "TOT-SD PLUS",
+        key: "TOT-SD PLUS",
         specification: [
-          "Specification 1",
-          "Specification 2",
-          "Specification 3",
+          "Max Sash Height (mm): 2400",
+          "Max Sash Width (mm): 1200",
+          "Glass Range (mm): 5-20",
         ],
         performanceParameters: [
-          { value: "Main value: 123Kg", subValue: "Sub value" },
-          { value: "Main value: 200Kg", subValue: "Sub value" },
-          { value: "Main value: 300Kg", subValue: "Sub value" },
-        ],
-      },
-      {
-        imageURL: [
-          "/img/Collaterals/stock-photo-black-frame-aluminium-windows-of-building-2183061193.jpg",
-        ],
-        title: "Title",
-        subtitle: "Subtitle",
-        description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco ",
-        name: "TOT-SD LITE",
-        key: "TOT-SD LITE",
-        specification: [
-          "Specification 1",
-          "Specification 2",
-          "Specification 3",
-        ],
-        performanceParameters: [
-          { value: "Main value: 123Kg", subValue: "Sub value" },
-          { value: "Main value: 200Kg", subValue: "Sub value" },
-          { value: "Main value: 300Kg", subValue: "Sub value" },
+          {
+            value: "Windload: 2 kpa",
+            subValue: "as per Class C5 (BS EN12210: 2000)",
+          },
+          {
+            value: "Air Tightness: 300 Pa ",
+            subValue: "as per class 2 (BS EN12207: 2000)",
+          },
+          {
+            value: "Water Tightness: 150 Pa",
+            subValue: "as per Class 4A (BS EN12207: 2000)",
+          },
         ],
       },
     ],
   },
-  doors: {
-    "Casement Series": [
+  Casement: {
+    "TOT-CS": [
       {
         imageURL: [
-          "/img/Collaterals/stock-photo-closeup-of-plastic-pvc-window-with-white-metal-frame-and-handle-installed-at-house-view-on-blurred-2206747419.jpg",
-          "/img/Collaterals/stock-photo-aluminum-window-with-cock-spur-window-handle-on-an-aluminium-window-with-mountain-view-782963743.jpg",
-          "/img/Collaterals/stock-photo-closeup-of-plastic-pvc-window-with-white-metal-frame-and-handle-installed-at-house-view-on-blurred-2206747419.jpg",
-          "/img/Collaterals/stock-photo-aluminum-window-with-cock-spur-window-handle-on-an-aluminium-window-with-mountain-view-782963743.jpg",
-          "/img/Collaterals/stock-photo-closeup-of-plastic-pvc-window-with-white-metal-frame-and-handle-installed-at-house-view-on-blurred-2206747419.jpg",
-          "/img/Collaterals/stock-photo-aluminum-window-with-cock-spur-window-handle-on-an-aluminium-window-with-mountain-view-782963743.jpg",
+          "/img/products/tot-cs/general/lucas-calloch-_OdDX7w__F4-unsplash.jpg",
+          "/img/products/tot-cs/general/alexandra-gornago-LrrADFcX80w-unsplash.jpg",
+          "/img/products/tot-cs/general/hans-isaacson-Nq2KRhZI7NY-unsplash.jpg",
+          "/img/products/tot-cs/general/jessica-hearn-d1QmOZL1nmQ-unsplash.jpg",
+        ],
+        assembly: [
+          {
+            imageurl:
+              "/img/products/tot-cs/assembly/Screenshot 2024-04-08 194604.png",
+            title: "",
+          },
+          {
+            imageurl:
+              "/img/products/tot-cs/assembly/Screenshot 2024-04-08 194619.png",
+            title: "",
+          },
+        ],
+        typologies: [
+          {
+            imageurl:
+              "/img/products/tot-cs/typologies/Screenshot 2024-04-08 194648.png",
+            title: "",
+          },
+          {
+            imageurl: "/img/products/tot-cs/Screenshot 2024-04-08 194725.png",
+            title: "",
+          },
+          {
+            imageurl:
+              "/img/products/tot-cs/typologies/Screenshot 2024-04-08 194743.png",
+            title: "",
+          },
+          {
+            imageurl:
+              "/img/products/tot-cs/typologies/Screenshot 2024-04-08 194809.png",
+            title: "",
+          },
+          {
+            imageurl:
+              "/img/products/tot-cs/typologies/Screenshot 2024-04-08 194828.png",
+            title: "",
+          },
+          {
+            imageurl:
+              "/img/products/tot-cs/typologies/Screenshot 2024-04-08 194852.png",
+            title: "",
+          },
+          {
+            imageurl:
+              "/img/products/tot-cs/typologies/Screenshot 2024-04-08 194912.png",
+            title: "",
+          },
+          {
+            imageurl:
+              "/img/products/tot-cs/typologies/Screenshot 2024-04-08 194929.png",
+            title: "",
+          },
+          {
+            imageurl:
+              "/img/products/tot-cs/typologies/Screenshot 2024-04-08 194951.png",
+            title: "",
+          },
         ],
         title: "Title",
         subtitle: "Subtitle",
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco ",
-        name: "TOT-SD LITE",
-        key: "TOT-SD LITE",
+        name: "TOT-CS",
+        key: "TOT-CS",
         specification: [
-          "Specification 1",
-          "Specification 2",
-          "Specification 3",
+          "Max Sash Height (mm): Door-2400, Window - 1500",
+          "Max Sash Width (mm): Door - 900, Window - 750",
+          "Glass Range (mm): 5 - 20",
         ],
         performanceParameters: [
-          { value: "Main value: 123Kg", subValue: "Sub value" },
-          { value: "Main value: 200Kg", subValue: "Sub value" },
-          { value: "Main value: 300Kg", subValue: "Sub value" },
-        ],
-      },
-      {
-        imageURL: [
-          "/img/Collaterals/stock-photo-closeup-of-plastic-pvc-window-with-white-metal-frame-and-handle-installed-at-house-view-on-blurred-2206747419.jpg",
-          "/img/Collaterals/stock-photo-aluminum-window-with-cock-spur-window-handle-on-an-aluminium-window-with-mountain-view-782963743.jpg",
-          "/img/Collaterals/stock-photo-closeup-of-plastic-pvc-window-with-white-metal-frame-and-handle-installed-at-house-view-on-blurred-2206747419.jpg",
-          "/img/Collaterals/stock-photo-aluminum-window-with-cock-spur-window-handle-on-an-aluminium-window-with-mountain-view-782963743.jpg",
-          "/img/Collaterals/stock-photo-closeup-of-plastic-pvc-window-with-white-metal-frame-and-handle-installed-at-house-view-on-blurred-2206747419.jpg",
-          "/img/Collaterals/stock-photo-aluminum-window-with-cock-spur-window-handle-on-an-aluminium-window-with-mountain-view-782963743.jpg",
-        ],
-        title: "Title",
-        subtitle: "Subtitle",
-        description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco ",
-        name: "TOT-SD LITE",
-        key: "TOT-SD LITE",
-        specification: [
-          "Specification 1",
-          "Specification 2",
-          "Specification 3",
-        ],
-        performanceParameters: [
-          { value: "Main value: 123Kg", subValue: "Sub value" },
-          { value: "Main value: 200Kg", subValue: "Sub value" },
-          { value: "Main value: 300Kg", subValue: "Sub value" },
-        ],
-      },
-    ],
-    "Openable Doors": [
-      {
-        imageURL: [
-          "/img/Collaterals/stock-photo-closeup-of-plastic-pvc-window-with-white-metal-frame-and-handle-installed-at-house-view-on-blurred-2206747419.jpg",
-          "/img/Collaterals/stock-photo-aluminum-window-with-cock-spur-window-handle-on-an-aluminium-window-with-mountain-view-782963743.jpg",
-          "/img/Collaterals/stock-photo-closeup-of-plastic-pvc-window-with-white-metal-frame-and-handle-installed-at-house-view-on-blurred-2206747419.jpg",
-          "/img/Collaterals/stock-photo-aluminum-window-with-cock-spur-window-handle-on-an-aluminium-window-with-mountain-view-782963743.jpg",
-          "/img/Collaterals/stock-photo-closeup-of-plastic-pvc-window-with-white-metal-frame-and-handle-installed-at-house-view-on-blurred-2206747419.jpg",
-          "/img/Collaterals/stock-photo-aluminum-window-with-cock-spur-window-handle-on-an-aluminium-window-with-mountain-view-782963743.jpg",
-        ],
-        title: "Title",
-        subtitle: "Subtitle",
-        description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco ",
-        name: "TOT-SD LITE",
-        key: "TOT-SD LITE",
-        specification: [
-          "Specification 1",
-          "Specification 2",
-          "Specification 3",
-        ],
-        performanceParameters: [
-          { value: "Main value: 123Kg", subValue: "Sub value" },
-          { value: "Main value: 200Kg", subValue: "Sub value" },
-          { value: "Main value: 300Kg", subValue: "Sub value" },
-        ],
-      },
-      {
-        imageURL: [
-          "/img/Collaterals/stock-photo-closeup-of-plastic-pvc-window-with-white-metal-frame-and-handle-installed-at-house-view-on-blurred-2206747419.jpg",
-          "/img/Collaterals/stock-photo-aluminum-window-with-cock-spur-window-handle-on-an-aluminium-window-with-mountain-view-782963743.jpg",
-          "/img/Collaterals/stock-photo-closeup-of-plastic-pvc-window-with-white-metal-frame-and-handle-installed-at-house-view-on-blurred-2206747419.jpg",
-          "/img/Collaterals/stock-photo-aluminum-window-with-cock-spur-window-handle-on-an-aluminium-window-with-mountain-view-782963743.jpg",
-          "/img/Collaterals/stock-photo-closeup-of-plastic-pvc-window-with-white-metal-frame-and-handle-installed-at-house-view-on-blurred-2206747419.jpg",
-          "/img/Collaterals/stock-photo-aluminum-window-with-cock-spur-window-handle-on-an-aluminium-window-with-mountain-view-782963743.jpg",
-        ],
-        title: "Title",
-        subtitle: "Subtitle",
-        description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco ",
-        name: "TOT-SD LITE",
-        key: "TOT-SD LITE",
-        specification: [
-          "Specification 1",
-          "Specification 2",
-          "Specification 3",
-        ],
-        performanceParameters: [
-          { value: "Main value: 123Kg", subValue: "Sub value" },
-          { value: "Main value: 200Kg", subValue: "Sub value" },
-          { value: "Main value: 300Kg", subValue: "Sub value" },
+          {
+            value: "Windload: 1.6 kpa",
+            subValue: "as per Class C5 (BS EN12210: 2000)",
+          },
+          {
+            value: "Air Tightness: 150 Pa ",
+            subValue: "as per class 2 (BS EN12207: 2000)",
+          },
+          {
+            value: "Water Tightness: 150 Pa",
+            subValue: "as per Class 4A (BS EN12207: 2000)",
+          },
         ],
       },
     ],

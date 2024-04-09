@@ -39,7 +39,7 @@ function Hero() {
             dicta sunt explicabo.
           </p>
           <div className="m-8">
-            <Button_Primary text={"Discover The Story"} />
+            {/* <Button_Primary text={"Discover The Story"} /> */}
           </div>
           <Dots currentIndex={currentImage} imageLength={imageLength} />
         </div>
@@ -58,7 +58,7 @@ function Hero() {
             dicta sunt explicabo.
           </p>
           <div className="m-8">
-            <Button_Primary text={"Discover The Story"} />
+            {/* <Button_Primary text={"Discover The Story"} /> */}
           </div>
           <Dots currentIndex={currentImage} imageLength={imageLength} />
         </div>
@@ -77,7 +77,7 @@ function Hero() {
             dicta sunt explicabo.
           </p>
           <div className="m-8">
-            <Button_Primary text={"Discover The Story"} />
+            {/* <Button_Primary text={"Discover The Story"} /> */}
           </div>
           <Dots currentIndex={currentImage} imageLength={imageLength} />
         </div>
@@ -96,7 +96,7 @@ function Hero() {
             dicta sunt explicabo.
           </p>
           <div className="m-8">
-            <Button_Primary text={"Discover The Story"} />
+            {/* <Button_Primary text={"Discover The Story"} /> */}
           </div>
           <Dots currentIndex={currentImage} imageLength={imageLength} />
         </div>

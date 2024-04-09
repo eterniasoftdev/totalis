@@ -29,18 +29,18 @@ function ImageComponent({ text, imageURL, link }: ImageProp) {
 }
 
 function Applications() {
-  const options: Array<"Doors" | "Windows" | "Railing"> = [
-    "Doors",
-    "Windows",
-    "Railing",
+  const options: Array<"Sliding" | "Casement" | "Railing"> = [
+    "Sliding",
+    "Casement",
+    // "Railing",
   ];
   const optionDetail = {
-    Doors: {
+    Casement: {
       imageURL: `url("/img/Collaterals/stock-photo-happy-young-boy-kid-opening-the-sliding-door-on-rooftop-patio-area-at-home-1246210324.jpg")`,
       text: "Explore the Decorative collection and experience the power of lighting.",
       link: "",
     },
-    Windows: {
+    Sliding: {
       imageURL: `url("/img/Collaterals/stock-photo-aluminum-window-with-cock-spur-window-handle-on-an-aluminium-window-with-mountain-view-782963743.jpg")`,
       text: "Explore the Outdoor collection and experience the power of lighting.",
       link: "",
@@ -51,7 +51,7 @@ function Applications() {
       link: "",
     },
   };
-  const [option, setOption] = useState<"Doors" | "Windows" | "Railing">(
+  const [option, setOption] = useState<"Casement" | "Sliding" | "Railing">(
     options[0]
   );
   return (
@@ -67,7 +67,7 @@ function Applications() {
             }`}
             onMouseEnter={() => setOption(options[0])}
           >
-            Doors
+            <Link href={"/product?product=Sliding"}>Sliding</Link>
           </li>
           <li
             className={`cursor-pointer tracking-wide ${
@@ -75,22 +75,22 @@ function Applications() {
             }`}
             onMouseEnter={() => setOption(options[1])}
           >
-            Windows
+            <Link href={"/product?product=Casement"}>Casement</Link>
           </li>
-          <li
+          {/* <li
             className={`cursor-pointer tracking-wide ${
               option == options[2] ? "text-gray-900" : ""
             }`}
             onMouseEnter={() => setOption(options[2])}
           >
             Railing
-          </li>
+          </li> */}
         </ul>
       </div>
       <ImageComponent
-        imageURL={optionDetail[option].imageURL}
-        text={optionDetail[option].text}
-        link={""}
+        imageURL={optionDetail[option]?.imageURL}
+        text={optionDetail[option]?.text}
+        link={`/product?product=${option}`}
       />
     </div>
   );

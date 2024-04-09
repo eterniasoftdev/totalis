@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
+import StickyNav from "./_components/StickyEnquiry/Page";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,8 +21,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         {/* <div className="w-screen bg-gray-200"> */}
+
         <Header />
-        {children}
+        <StickyNav />
+        <div className="relative z-30">{children}</div>
         <Footer />
         {/* </div> */}
       </body>

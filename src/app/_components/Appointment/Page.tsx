@@ -1,4 +1,5 @@
 import Button_Primary_Black from "@/atoms/Buttons/Button-Primary-Black";
+import Link from "next/link";
 import React from "react";
 
 function Appointment() {
@@ -17,7 +18,9 @@ function Appointment() {
             providing specialist support and advice.
           </p>
           <div className="mt-12">
-            <Button_Primary_Black text="Book An Appointment" />
+            <Link href="/contact">
+              <Button_Primary_Black text="Book An Appointment" />
+            </Link>
           </div>
         </div>
       </div>

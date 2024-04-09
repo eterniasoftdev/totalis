@@ -1,4 +1,5 @@
 import Button_Primary from "@/atoms/Buttons/Button-Primary";
+import Link from "next/link";
 import React from "react";
 
 function ContactUs() {
@@ -19,7 +20,9 @@ function ContactUs() {
             projects and installations to share with the Flos universe.
           </p>
           <div className="mt-4 flex self-start ">
-            <Button_Primary text="Discover More" />
+            <Link href="/contact">
+              <Button_Primary text="Discover More" />
+            </Link>
           </div>
         </div>
       </div>
