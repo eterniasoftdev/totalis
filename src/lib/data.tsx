@@ -1,18 +1,19 @@
-interface cityDataInterface {
-  [key: string]: Array<{
-    storeName: string;
-    pincode: string;
-    city: string;
-    state: string;
-    country: string;
-    location: string;
-    address: string;
-    contactNumber: string;
-    describe: string;
-  }>;
+export interface storeIndividualInterface {
+  storeName: string;
+  pincode: string;
+  city: string;
+  state: string;
+  country: string;
+  location: string;
+  address: string;
+  contactNumber: string;
+  describe: string;
+}
+export interface cityDataInterface {
+  [key: string]: Array<storeIndividualInterface>;
 }
 
-interface stateDataInterface {
+export interface stateDataInterface {
   [key: string]: cityDataInterface;
 }
 
@@ -22,49 +23,13 @@ interface storeDataInterface {
 
 export const storeData: storeDataInterface = {
   India: {
-    Jharkhand: {
-      Ranchi: [
+    Delhi: {
+      Delhi: [
         {
-          storeName: "Store 1",
+          storeName: "Bharat Polyzone Private Limited",
           pincode: "834005",
-          city: "City Name",
-          state: "Jharkhand",
-          country: "India",
-          location: "Location",
-          address: "address detail",
-          contactNumber: "7061329220",
-          describe: "Describe your store",
-        },
-        {
-          storeName: "Store 2",
-          pincode: "834005",
-          city: "City Name",
-          state: "Jharkhand",
-          country: "India",
-          location: "Location",
-          address: "address detail",
-          contactNumber: "7061329220",
-          describe: "Describe your store",
-        },
-      ],
-
-      Jamshedpur: [
-        {
-          storeName: "Store 3",
-          pincode: "834005",
-          city: "City Name",
-          state: "Jharkhand",
-          country: "India",
-          location: "Location",
-          address: "address detail",
-          contactNumber: "7061329220",
-          describe: "Describe your store",
-        },
-        {
-          storeName: "Store 4",
-          pincode: "834005",
-          city: "City Name",
-          state: "Jharkhand",
+          city: "Delhi",
+          state: "Delhi",
           country: "India",
           location: "Location",
           address: "address detail",
@@ -73,24 +38,13 @@ export const storeData: storeDataInterface = {
         },
       ],
     },
-    Maharstra: {
+    Maharashtra: {
       Mumbai: [
         {
-          storeName: "Store 221",
+          storeName: "JK COATING CENTRE",
           pincode: "834005",
-          city: "City Name",
-          state: "Jharkhand",
-          country: "India",
-          location: "Location",
-          address: "address detail",
-          contactNumber: "7061329220",
-          describe: "Describe your store",
-        },
-        {
-          storeName: "Store 293",
-          pincode: "834005",
-          city: "City Name",
-          state: "Jharkhand",
+          city: "Mumbai",
+          state: "Maharastra",
           country: "India",
           location: "Location",
           address: "address detail",
@@ -98,23 +52,89 @@ export const storeData: storeDataInterface = {
           describe: "Describe your store",
         },
       ],
-      Pune: [
+    },
+    Gujarat: {
+      Vadodra: [
         {
-          storeName: "Store 929",
+          storeName: "STRONGHOLD TECHNICAL SERVICES",
           pincode: "834005",
-          city: "City Name",
-          state: "Jharkhand",
+          city: "Vadodra",
+          state: "Gujarat",
           country: "India",
           location: "Location",
           address: "address detail",
           contactNumber: "7061329220",
           describe: "Describe your store",
         },
+      ],
+    },
+    "Tamil Nadu": {
+      Chennai: [
         {
-          storeName: "Store 948",
+          storeName: "POLARIS INFRASOLUTIONS PVT LTD",
           pincode: "834005",
-          city: "City Name",
-          state: "Jharkhand",
+          city: "Chennai",
+          state: "Tamil Nadu",
+          country: "India",
+          location: "Location",
+          address: "address detail",
+          contactNumber: "7061329220",
+          describe: "Describe your store",
+        },
+      ],
+    },
+    "Andhra Pradesh": {
+      Vijayawada: [
+        {
+          storeName: "HARDWAREWORLD",
+          pincode: "834005",
+          city: "Vijayawada",
+          state: "Andhra Pradesh",
+          country: "India",
+          location: "Location",
+          address: "address detail",
+          contactNumber: "7061329220",
+          describe: "Describe your store",
+        },
+      ],
+    },
+    Telangana: {
+      Hyderabad: [
+        {
+          storeName: "METAL HOUSE",
+          pincode: "834005",
+          city: "Hyderabad",
+          state: "Telangana",
+          country: "India",
+          location: "Location",
+          address: "address detail",
+          contactNumber: "7061329220",
+          describe: "Describe your store",
+        },
+      ],
+    },
+    Chhattisgarh: {
+      Raigarh: [
+        {
+          storeName: "CHHATTISGARH WOOD INDUSTRIES",
+          pincode: "834005",
+          city: "Raigarh",
+          state: "Chhattisgarh",
+          country: "India",
+          location: "Location",
+          address: "address detail",
+          contactNumber: "7061329220",
+          describe: "Describe your store",
+        },
+      ],
+    },
+    "Uttar Pradesh": {
+      Lucknow: [
+        {
+          storeName: "Sadi Ram Vishwa Prakash",
+          pincode: "834005",
+          city: "Lucknow",
+          state: "Uttar Pradesh",
           country: "India",
           location: "Location",
           address: "address detail",

@@ -12,7 +12,7 @@ function Hero2() {
             customization levels.
           </p>
           <div className="mt-8">
-            <Button_Primary text={"Unlock Solutions"} />
+            <Button_Primary text={"Unlock Solutions"} className="" />
           </div>
         </div>
       </div>

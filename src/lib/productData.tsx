@@ -6,6 +6,7 @@ export interface individualProductType {
   subtitle: string;
   description: string;
   name: string;
+  category: string;
   key: string;
   specification: string[];
   performanceParameters: Array<{ value: string; subValue: string }>;
@@ -75,6 +76,7 @@ export const products: productInterface = {
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco ",
         name: "TOT-SD LITE",
         key: "TOT-SD LITE",
+        category: "Sliding",
         specification: [
           "Max Sash Height (mm): 1500",
           "Max Sash Width (mm): 800",
@@ -154,6 +156,7 @@ export const products: productInterface = {
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco ",
         name: "TOT-SD",
         key: "TOT-SD",
+        category: "Sliding",
         specification: [
           "Max Sash Height (mm): 2100",
           "Max Sash Width (mm): 1000",
@@ -179,7 +182,7 @@ export const products: productInterface = {
       {
         imageURL: [
           "/img/products/tot_sd_plus/general/don-kaveen-NFbwes_e-jI-unsplash.jpg",
-          "/img/products/tot_sd_plus/general/portrait1.jpg",
+          "/img/products/tot_sd_plus/general/toa-heftiba-FV3GConVSss-unsplash.jpg",
           "/img/products/tot_sd_plus/general/webaliser-_TPTXZd9mOo-unsplash.jpg",
           "/img/products/tot_sd_plus/general/webaliser-_TPTXZd9mOo-unsplash.jpg",
         ],
@@ -233,6 +236,7 @@ export const products: productInterface = {
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco ",
         name: "TOT-SD PLUS",
         key: "TOT-SD PLUS",
+        category: "Sliding",
         specification: [
           "Max Sash Height (mm): 2400",
           "Max Sash Width (mm): 1200",
@@ -328,6 +332,7 @@ export const products: productInterface = {
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco ",
         name: "TOT-CS",
         key: "TOT-CS",
+        category: "Casement",
         specification: [
           "Max Sash Height (mm): Door-2400, Window - 1500",
           "Max Sash Width (mm): Door - 900, Window - 750",

@@ -13,15 +13,22 @@ type ImageProp = {
 function ImageComponent({ text, thumbnail, downloadurl, name }: ImageProp) {
   return (
     <div
-      className="h-full w-1/3 bg-contain flex items-center justify-center bg-no-repeat"
-      style={{
-        backgroundImage: thumbnail,
-      }}
+      className="h-full w-1/3 bg-contain flex flex-col sm:flex-row gap-2 items-center justify-center bg-no-repeat"
+      style={
+        {
+          // backgroundImage: thumbnail,
+        }
+      }
     >
-      <div className="flex flex-col items-center gap-12 font-medium transform translate-x-56">
-        <p className="text-center text-xl tracking-wider">{text}</p>
+      <img
+        src={thumbnail}
+        alt=""
+        className="min-h-56 max-h-96 min-w-56 max-w-96 "
+      />
+      <div className="flex flex-col items-center gap-12 font-medium">
+        {/* <p className="text-center text-xl tracking-wider">{text}</p> */}
         <Link href={downloadurl} target="_blank">
-          <Button_Primary_Black text="View" className="w-32" />
+          <Button_Primary_Black text="View" className="w-32 bg-green-600" />
         </Link>
       </div>
     </div>
@@ -35,15 +42,15 @@ function Page() {
       {
         text: "Explore the Decorative collection and experience the power of lighting.",
         name: "Totalis Brochure",
-        thumbnail: `url("/img/totalis-cover-1.png")`,
+        thumbnail: "/img/totalis-cover-1.png",
         downloadurl: "https://www.hindalco.com/upload/pdf/totalis-brochure.pdf",
       },
     ],
   };
   const [SelectedOption, setSelectedOption] = useState<"Brochure">(options[0]);
   return (
-    <div className="h-screen flex gap-12 p-12 px-36">
-      <div className="w-1/2 items-center flex flex-col gap-12 py-12">
+    <div className="h-screen flex flex-col items-center gap-12 p-16 px-36">
+      {/* <div className="w-1/2 items-center flex flex-col gap-12 py-12">
         <h4 className="uppercase tracking-widest text-sm text-gray-700 font-semibold">
           Downloads
         </h4>
@@ -61,7 +68,7 @@ function Page() {
             </li>
           ))}
         </ul>
-      </div>
+      </div> */}
       <ImageComponent
         thumbnail={optionDetail[SelectedOption][0]?.thumbnail}
         text={optionDetail[SelectedOption][0]?.text}

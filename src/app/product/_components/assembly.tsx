@@ -1,9 +1,9 @@
 import React from "react";
-import { individualProductType } from "../data";
+import { individualProductType } from "../../../lib/productData";
 
 function Assembly({ data }: { data: individualProductType }) {
   return (
-    <div className="flex flex-row justify-around gap-8">
+    <div className="flex flex-wrap justify-around gap-8">
       <img
         src={data.assembly[0].imageurl}
         alt=""

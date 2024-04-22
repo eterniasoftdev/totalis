@@ -4,22 +4,21 @@ import React from "react";
 
 function Appointment() {
   return (
-    <div className="h-96 flex flex-col gap-4 p-20 px-32 bg-gray-100">
+    <div className="h-auto md:h-96 flex flex-col gap-4 p-20 px-8 md:px-32 bg-gray-100">
       <h3 className="text-sm font-semibold tracking-widest uppercase">
-        Book an Appointment
+        Submit an Enquiry
       </h3>
-      <div className="flex gap-20 my-2">
-        <h1 className="text-4xl font-normal w-1/2 tracking-wider">
-          Are you a professional and your project needs consulting and support?
+      <div className="flex flex-col md:flex-row gap-4 md:gap-20 my-2">
+        <h1 className="text-4xl font-normal w-full md:w-1/2 tracking-wider">
+          Are you someone looking for a windows partner?
         </h1>
-        <div className="w-1/2">
+        <div className="w-full md:w-1/2">
           <p className="text-lg text-semibold">
-            An exclusive one-in-one service for our professional clients
-            providing specialist support and advice.
+            Get in touch with our sales person!
           </p>
-          <div className="mt-12">
+          <div className="mt-4 md:mt-12">
             <Link href="/contact">
-              <Button_Primary_Black text="Book An Appointment" />
+              <Button_Primary_Black text="Submit an Enquiry" />
             </Link>
           </div>
         </div>

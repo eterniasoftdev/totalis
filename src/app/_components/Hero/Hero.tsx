@@ -24,14 +24,14 @@ function Hero() {
   }, []);
   return (
     <div
-      className={`w-screen min-h-screen  h-screen flex flex-row overflow-x-hidden text-white`}
+      className={`w-screen min-h-screen  h-screen flex flex-row overflow-hidden text-white`}
     >
       <div
         className={`min-w-full min-h-full bg-hero-pattern-1 bg-cover flex flex-row  duration-1000 transform`}
         style={{ transform: `translateX(${-currentImage * 100}%)` }}
       >
-        <div className="w-2/3 flex flex-col px-20 items-start pt-24 pb-16 gap-12 ">
-          <p className="text-6xl">The Rebel Black Flag </p>
+        <div className="w-full md:w-2/3 flex flex-col px-8 sm:px-20 items-start pt-24 pb-16 gap-12 ">
+          <p className="text-4xl sm:text-6xl">The Rebel Black Flag </p>
           <p className="text-lg tracking-wide leading-6">
             Sed ut perspiciatis unde omnis iste natus error sit voluptatem
             accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
@@ -49,8 +49,10 @@ function Hero() {
         className={`min-w-full min-h-full bg-hero-pattern-2 bg-cover flex flex-row  duration-1000 transform`}
         style={{ transform: `translateX(${-currentImage * 100}%)` }}
       >
-        <div className="w-2/3 flex flex-col px-20 items-start pt-24 pb-16 gap-12 ">
-          <p className="text-6xl">The Perelman Performing Arts Center</p>
+        <div className="w-full md:w-2/3 flex flex-col px-8 sm:px-20 items-start pt-24 pb-16 gap-12 ">
+          <p className="text-4xl sm:text-6xl">
+            The Perelman Performing Arts Center
+          </p>
           <p className="text-lg tracking-wide leading-6">
             Sed ut perspiciatis unde omnis iste natus error sit voluptatem
             accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
@@ -68,8 +70,8 @@ function Hero() {
         className={`min-w-full min-h-full bg-hero-pattern-3 bg-cover flex flex-row  duration-1000 transform`}
         style={{ transform: `translateX(${-currentImage * 100}%)` }}
       >
-        <div className="w-2/3 flex flex-col px-20 items-start pt-24 pb-16 gap-12 ">
-          <p className="text-6xl">A light born of shadow</p>
+        <div className="w-full md:w-2/3 flex flex-col px-8 sm:px-20 items-start pt-24 pb-16 gap-12 ">
+          <p className="text-4xl sm:text-6xl">A light born of shadow</p>
           <p className="text-lg tracking-wide leading-6">
             Sed ut perspiciatis unde omnis iste natus error sit voluptatem
             accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
@@ -87,15 +89,15 @@ function Hero() {
         className={`min-w-full min-h-full bg-hero-pattern-4 bg-cover flex flex-row  duration-1000 transform`}
         style={{ transform: `translateX(${-currentImage * 100}%)` }}
       >
-        <div className="w-2/3 flex flex-col px-20 items-start pt-24 pb-16 gap-12 ">
-          <p className="text-6xl">Gustave at Cromwell Place Café</p>
+        <div className="w-full md:w-2/3 flex flex-col px-8 sm:px-20 items-start pt-24 pb-16 gap-12 ">
+          <p className="text-4xl sm:text-6xl">Gustave at Cromwell Place Café</p>
           <p className="text-lg tracking-wide leading-6">
             Sed ut perspiciatis unde omnis iste natus error sit voluptatem
             accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
             quae ab illo inventore veritatis et quasi architecto beatae vitae
             dicta sunt explicabo.
           </p>
-          <div className="m-8">
+          <div className="sm:m-8">
             {/* <Button_Primary text={"Discover The Story"} /> */}
           </div>
           <Dots currentIndex={currentImage} imageLength={imageLength} />
@@ -106,7 +108,7 @@ function Hero() {
   );
 }
 
-function Dots({
+export function Dots({
   currentIndex,
   imageLength,
 }: {

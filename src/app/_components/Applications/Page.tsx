@@ -1,6 +1,7 @@
 "use client";
 import Button_Primary from "@/atoms/Buttons/Button-Primary";
 import Button_Primary_Black from "@/atoms/Buttons/Button-Primary-Black";
+import { individualProductType, products } from "@/lib/productData";
 import Link from "next/link";
 import React, { useState } from "react";
 
@@ -29,69 +30,39 @@ function ImageComponent({ text, imageURL, link }: ImageProp) {
 }
 
 function Applications() {
-  const options: Array<"Sliding" | "Casement" | "Railing"> = [
-    "Sliding",
-    "Casement",
-    // "Railing",
-  ];
-  const optionDetail = {
-    Casement: {
-      imageURL: `url("/img/Collaterals/stock-photo-happy-young-boy-kid-opening-the-sliding-door-on-rooftop-patio-area-at-home-1246210324.jpg")`,
-      text: "Explore the Decorative collection and experience the power of lighting.",
-      link: "",
-    },
-    Sliding: {
-      imageURL: `url("/img/Collaterals/stock-photo-aluminum-window-with-cock-spur-window-handle-on-an-aluminium-window-with-mountain-view-782963743.jpg")`,
-      text: "Explore the Outdoor collection and experience the power of lighting.",
-      link: "",
-    },
-    Railing: {
-      imageURL: `url("/img/Collaterals/stock-photo-modern-architecture-terrace-aluminum-rail-and-fall-protection-tempered-glass-1125992282.jpg")`,
-      text: "Explore the Architectural collection and experience the power of lighting.",
-      link: "",
-    },
-  };
-  const [option, setOption] = useState<"Casement" | "Sliding" | "Railing">(
-    options[0]
-  );
+  let productArray: individualProductType[] = [];
+  Object.keys(products).forEach((productName) => {
+    Object.keys(products[productName]).forEach((categoryName) => {
+      productArray = [
+        ...productArray,
+        ...products?.[productName]?.[categoryName],
+      ];
+    });
+  });
   return (
-    <div className="h-screen flex gap-12 p-12 px-32">
-      <div className="w-1/2 items-center flex flex-col gap-12">
-        <h4 className="uppercase tracking-widest text-sm text-gray-700 font-semibold">
-          Browse Applications
-        </h4>
-        <ul className="text-4xl text-gray-500 font-medium flex flex-col gap-8 self-stretch text-center">
-          <li
-            className={`cursor-pointer tracking-wide  ${
-              option == options[0] ? "text-gray-900" : ""
-            }`}
-            onMouseEnter={() => setOption(options[0])}
+    <div className="p-6 grid grid-cols-3 sm:grid-cols-6 xl:grid-cols-12 gap-y-[2rem] gap-x-2 w-screen ">
+      <h1 className="col-span-full text-4xl tracking-wider text-center mb-4 py-4 border-b">
+        Products
+      </h1>
+      {productArray.map((product, index) => {
+        return (
+          <Link
+            href={`/product?product=${product.category}&category=${product.name}`}
+            className={`col-span-3 flex flex-col h-[26rem] gap-2 cursor-pointer`}
+            key={index}
           >
-            <Link href={"/product?product=Sliding"}>Sliding</Link>
-          </li>
-          <li
-            className={`cursor-pointer tracking-wide ${
-              option == options[1] ? "text-gray-900" : ""
-            }`}
-            onMouseEnter={() => setOption(options[1])}
-          >
-            <Link href={"/product?product=Casement"}>Casement</Link>
-          </li>
-          {/* <li
-            className={`cursor-pointer tracking-wide ${
-              option == options[2] ? "text-gray-900" : ""
-            }`}
-            onMouseEnter={() => setOption(options[2])}
-          >
-            Railing
-          </li> */}
-        </ul>
-      </div>
-      <ImageComponent
-        imageURL={optionDetail[option]?.imageURL}
-        text={optionDetail[option]?.text}
-        link={`/product?product=${option}`}
-      />
+            <div className=" h-5/6 w-full overflow-hidden">
+              <img
+                src={product.imageURL[0]}
+                alt=""
+                className="object-cover  w-full h-full overflow-hidden hover:transform hover:translate hover:scale-110 transition-all duration-700"
+              />
+            </div>
+            <p className="text-center">{product.name}</p>
+            {/* <p className="text-center text-xs">{product.title}</p> */}
+          </Link>
+        );
+      })}
     </div>
   );
 }

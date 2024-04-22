@@ -1,5 +1,5 @@
 import React from "react";
-import { individualProductType } from "../data";
+import { individualProductType } from "../../../lib/productData";
 
 function Typologies({ data }: { data: individualProductType }) {
   return (

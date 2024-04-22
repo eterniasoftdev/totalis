@@ -16,7 +16,7 @@ function Solutions() {
   return (
     <div className="flex flex-col p-20 px-32 gap-8">
       <h1 className="text-5xl font-medium tracking-widest">
-        Explore our lighting solutions
+        Explore our Projects
       </h1>
       <div className="flex flex-row items-center">
         <p className="w-4/5 text-base text-gray-700">

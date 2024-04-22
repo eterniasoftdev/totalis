@@ -79,6 +79,7 @@ const config: Config = {
       current: "currentColor",
       green: {
         500: "#10B981",
+        600: "#78B533",
       },
       teal: {
         800: "#115E59",
@@ -91,6 +92,10 @@ const config: Config = {
       orange: {
         50: "rgba(255, 247, 237, 0.8)",
       },
+      indigo: {
+        800: "#3730A3",
+      },
+
       // Configure your color palette here
     },
   },

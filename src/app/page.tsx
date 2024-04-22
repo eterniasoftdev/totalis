@@ -6,18 +6,23 @@ import Stories from "@/app/_components/Stories/page";
 import Solutions from "./_components/Solutions/Page";
 import ContactUs from "./_components/ContactUs/Page";
 import Applications from "./_components/Applications/Page";
+import Projects from "./projects/page";
+import About from "./_components/About/page";
 // import StickyNav from "./_components/StickyEnquiry/Page";
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col overflow-x-hidden ">
       <Hero />
-      <Stories />
-      <Hero2 />
-      <Appointment />
-      <Solutions />
-      <ContactUs />
+      {/* <Stories /> */}
+      {/* <Hero2 /> */}
+
       <Applications />
+      {/* <Solutions /> */}
+      <Projects />
+      <About />
+      <Appointment />
+      {/* <ContactUs /> */}
     </main>
   );
 }

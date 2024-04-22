@@ -1,27 +1,29 @@
 "use client";
-import React from "react";
-import { IoIosSearch } from "react-icons/io";
-import { IoIosPin } from "react-icons/io";
+import React, { Dispatch, SetStateAction } from "react";
+import {
+  IoIosSearch,
+  IoIosPin,
+  IoIosArrowDown,
+  IoIosClose,
+} from "react-icons/io";
 import { FaUser } from "react-icons/fa";
-import { IoIosArrowDown } from "react-icons/io";
 import Link from "next/link";
-import Image from "next/image";
-function Header() {
+// import Image from "next/image";
+import { RxHamburgerMenu } from "react-icons/rx";
+interface HeaderInterface {
+  setIsChecked: Dispatch<SetStateAction<boolean>>;
+  isChecked: boolean;
+}
+
+function Header({ setIsChecked, isChecked }: HeaderInterface) {
   const [isScrolledDown, setIsScrolledDown] = React.useState(true);
   const [prevScrollPos, setPrevScrollPos] = React.useState<number>(0);
   const [isProductsDropdownOpen, setIsProductsDropdownOpen] =
     React.useState(false);
-
-  // const [isContactDropdownOpen, setIsContactDropdownOpen] =
-  //   React.useState(false);
-
-  const toggleProductsDropdown = () => {
-    setIsProductsDropdownOpen(!isProductsDropdownOpen);
-  };
-
-  // const toggleContactDropdown = () => {
-  //   setIsContactDropdownOpen(!isContactDropdownOpen);
-  // };
+  const [isSlidingDropdownOpen, setIsSlidingDropdownOpen] =
+    React.useState(false);
+  const [isCasementDropdownOpen, setIsCasementDropdownOpen] =
+    React.useState(false);
 
   let scrollTimer: ReturnType<typeof setTimeout>;
 
@@ -37,6 +39,7 @@ function Header() {
       }
     }, 150); // Adjust the timeout duration as needed
   };
+
   React.useEffect(() => {
     if (window) window.addEventListener("wheel", handleScroll);
     return () => {
@@ -44,93 +47,172 @@ function Header() {
     };
   }, [prevScrollPos]);
 
+  const toggleProductsDropdown = () => {
+    setIsProductsDropdownOpen(!isProductsDropdownOpen);
+  };
+
+  const toggleSlidingDropdown = () => {
+    setIsSlidingDropdownOpen(!isSlidingDropdownOpen);
+  };
+
+  const toggleCasementDropdown = () => {
+    setIsCasementDropdownOpen(!isCasementDropdownOpen);
+  };
   return (
-    <div
-      className={`fixed py-8 px-8 box-conatiner flex flex-row gap-x-16 w-screen bg-white z-50 ${
-        !isScrolledDown ? "flex" : "hidden"
-      }`}
-    >
-      <div className="">
-        <Link href="/">
-          <Image
-            src="/img/Totalis_Logo_crop.png"
-            alt="Totalis Logo"
-            width={166}
-            height={44}
-            priority={true}
-            objectFit="contain"
-            style={{
-              objectFit: "cover",
-            }}
-          />
-        </Link>
-      </div>
-      <div className="flex flex-row gap-x-6 text-sm tracking-wider font-medium">
-        <div className="cursor-pointer flex items-center ">
-          <Link href="/projects" className="flex items-center">
-            Light Solutions{" "}
+    <>
+      {/* Desktop Header */}
+      <div
+        className={`fixed py-4 px-8 box-conatiner flex flex-row gap-x-16 w-screen bg-white z-50 ${
+          !isScrolledDown ? "flex" : "hidden"
+        } md:flex`}
+      >
+        <div className="h-full">
+          <Link href="/">
+            <img
+              src="/img/Totalis_Logo_crop.png"
+              alt="Totalis Logo"
+              className="min-h-20 max-h-20 max-w-32 min-w-32 object-contain "
+              // style={{
+              //   objectFit: "cover",
+              // }}
+            />
+          </Link>
+        </div>
+        <div className="hidden md:flex flex-row gap-x-6 text-sm tracking-wider font-medium">
+          <div
+            className="cursor-pointer flex items-center"
+            onClick={toggleProductsDropdown}
+          >
+            Products{" "}
+            <div className="ml-1">
+              <IoIosArrowDown />
+            </div>
+            {isProductsDropdownOpen && (
+              <div className="absolute bg-white mt-1  flex flex-col gap-1 shadow-lg rounded-md transform translate-y-20">
+                <Link href="/product?product=Sliding">
+                  <div className="cursor-pointer hover:bg-gray-100 px-8 py-2 rounded-md">
+                    Sliding
+                  </div>
+                </Link>
+                <Link href="/product?product=Casement">
+                  <div className="cursor-pointer hover:bg-gray-100 px-8 py-2 rounded-md">
+                    Casement
+                  </div>
+                </Link>
+              </div>
+            )}
+          </div>
+          <Link href="/resource" className="flex items-center">
+            Resources{" "}
+            <div className="ml-1">
+              <IoIosArrowDown />
+            </div>
+          </Link>
+
+          <Link href="/contact" className="flex items-center">
+            Contact Us{" "}
             <div className="ml-1">
               <IoIosArrowDown />
             </div>
           </Link>
         </div>
-        {/* <div className="cursor-pointer flex items-center">Bespoke</div> */}
-        <div
-          className="cursor-pointer flex items-center"
-          onClick={toggleProductsDropdown}
-        >
-          Products{" "}
-          <div className="ml-1">
-            <IoIosArrowDown />
-          </div>
-          {isProductsDropdownOpen && (
-            <div className="absolute bg-white mt-1  flex flex-col gap-1 shadow-lg rounded-md transform translate-y-20">
-              <Link href="/product?product=Sliding">
-                <div className="cursor-pointer hover:bg-gray-100 px-8 py-2 rounded-md">
-                  Sliding
-                </div>
-              </Link>
-              <Link href="/product?product=Casement">
-                <div className="cursor-pointer hover:bg-gray-100 px-8 py-2 rounded-md">
-                  Casement
-                </div>
-              </Link>
-              {/* <Link href="/product?product=Railing">
-                <div className="cursor-pointer hover:bg-gray-100 px-8 py-2 rounded-md">
-                  Railing
-                </div>
-              </Link> */}
-            </div>
-          )}
+
+        <div className="hidden md:flex gap-x-8 flex-row ml-auto text-2xl font-semibold">
+          <Link href="/store" className="flex flex-row gap-2 items-center">
+            <IoIosPin />
+            <p className="text-xs">Dealer Locator</p>
+          </Link>
         </div>
-        <Link href="/resource" className="flex items-center">
-          Resources{" "}
-          <div className="ml-1">
-            <IoIosArrowDown />
-          </div>
-        </Link>
-
-        <Link href="/contact" className="flex items-center">
-          Contact Us{" "}
-          <div className="ml-1">
-            <IoIosArrowDown />
-          </div>
-        </Link>
+        <div
+          className="flex md:hidden ml-auto  items-center justify-center cursor-pointer"
+          onClick={() => {
+            setIsChecked((prev) => !prev);
+          }}
+        >
+          <RxHamburgerMenu />
+        </div>
       </div>
-
-      <div className="flex gap-x-8 flex-row ml-auto text-2xl font-semibold">
-        {/* <button>
-          <IoIosSearch />
-        </button> */}
-        <button>
-          <IoIosPin />
-        </button>
-        {/* <button>
-          <FaUser />
-        </button> */}
+      <div
+        className={`${
+          isChecked ? "fixed" : "hidden"
+        } md:hidden w-screen h-screen bg-gray-800 z-40 opacity-50 transition-all duration-700`}
+        onClick={() => setIsChecked(false)}
+      ></div>
+      <div
+        className={`fixed translate-x-[-18rem] transition-all duration-700 ${
+          isChecked ? "translate-x-[0]" : ""
+        } md:hidden w-[18rem] h-screen bg-white z-40 flex flex-col justify-center items-center`}
+      >
+        {/* Mention the mobile header below */}
+        <div
+          className="flex flex-col items-center gap-4"
+          onClick={() => setIsChecked(false)}
+        >
+          <Link href="/">Home</Link>
+          <div
+            onClick={(e) => {
+              e.stopPropagation();
+              toggleSlidingDropdown();
+            }}
+            className="flex items-center cursor-pointer"
+          >
+            Sliding
+            <div className="ml-1">
+              <IoIosArrowDown />
+            </div>
+            {isSlidingDropdownOpen && (
+              <div
+                className="absolute bg-white mt-1  flex flex-col gap-1 shadow-lg rounded-md transform translate-y-20"
+                onClick={() => setIsChecked(false)}
+              >
+                <Link href="/product?product=Sliding&category=TOT-SD LITE">
+                  <div className="cursor-pointer hover:bg-gray-100 px-8 py-2 rounded-md">
+                    TOT-SD LITE
+                  </div>
+                </Link>
+                <Link href="/product?product=Sliding&category=TOT-SD">
+                  <div className="cursor-pointer hover:bg-gray-100 px-8 py-2 rounded-md">
+                    TOT-SD
+                  </div>
+                </Link>
+                <Link href="/product?product=Sliding&category=TOT-SD PLUS">
+                  <div className="cursor-pointer hover:bg-gray-100 px-8 py-2 rounded-md">
+                    TOT-SD PLUS
+                  </div>
+                </Link>
+              </div>
+            )}
+          </div>
+          <div
+            onClick={(e) => {
+              e.stopPropagation();
+              toggleCasementDropdown();
+            }}
+            className="flex items-center cursor-pointer"
+          >
+            Casement
+            <div className="ml-1">
+              <IoIosArrowDown />
+            </div>
+            {isCasementDropdownOpen && (
+              <div
+                className="absolute bg-white mt-1  flex flex-col gap-1 shadow-lg rounded-md transform translate-y-8"
+                onClick={() => setIsChecked(false)}
+              >
+                <Link href="/product?product=Casement&category=TOT-CS">
+                  <div className="cursor-pointer hover:bg-gray-100 px-8 py-2 rounded-md">
+                    TOT-CS
+                  </div>
+                </Link>
+              </div>
+            )}
+          </div>
+          <Link href="/resource">Resources</Link>
+          <Link href="/contact">Contact Us</Link>
+          <Link href="/store">Dealer Locator</Link>
+        </div>
       </div>
-      {/* <div className="text-gray-50">Hello</div> */}
-    </div>
+    </>
   );
 }
 

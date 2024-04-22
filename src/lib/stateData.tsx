@@ -21,7 +21,7 @@ export const state = [
   "Punjab",
   "Rajasthan",
   "Sikkim",
-  "Tamilnadu",
+  "Tamil Nadu",
   "Telangana",
   "Tripura",
   "Uttar Pradesh",
