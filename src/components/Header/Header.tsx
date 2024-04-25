@@ -64,7 +64,7 @@ function Header({ setIsChecked, isChecked }: HeaderInterface) {
       <div
         className={`fixed py-4 px-8 box-conatiner flex flex-row gap-x-16 w-screen bg-white z-50 ${
           !isScrolledDown ? "flex" : "hidden"
-        } md:flex`}
+        }`}
       >
         <div className="h-full">
           <Link href="/">
@@ -79,6 +79,12 @@ function Header({ setIsChecked, isChecked }: HeaderInterface) {
           </Link>
         </div>
         <div className="hidden md:flex flex-row gap-x-6 text-sm tracking-wider font-medium">
+          <Link href="/why" className="flex items-center">
+            Why Totalis{" "}
+            <div className="ml-1">
+              <IoIosArrowDown />
+            </div>
+          </Link>
           <div
             className="cursor-pointer flex items-center"
             onClick={toggleProductsDropdown}
@@ -102,11 +108,15 @@ function Header({ setIsChecked, isChecked }: HeaderInterface) {
               </div>
             )}
           </div>
-          <Link href="/resource" className="flex items-center">
-            Resources{" "}
-            <div className="ml-1">
+          <Link
+            href="https://www.hindalco.com/upload/pdf/totalis-brochure.pdf"
+            target="_blank"
+            className="flex items-center"
+          >
+            Brochure{" "}
+            {/* <div className="ml-1">
               <IoIosArrowDown />
-            </div>
+            </div> */}
           </Link>
 
           <Link href="/contact" className="flex items-center">
@@ -149,6 +159,12 @@ function Header({ setIsChecked, isChecked }: HeaderInterface) {
           onClick={() => setIsChecked(false)}
         >
           <Link href="/">Home</Link>
+          <Link href="/why" className="flex items-center">
+            Why Totalis{" "}
+            <div className="ml-1">
+              <IoIosArrowDown />
+            </div>
+          </Link>
           <div
             onClick={(e) => {
               e.stopPropagation();
@@ -207,7 +223,12 @@ function Header({ setIsChecked, isChecked }: HeaderInterface) {
               </div>
             )}
           </div>
-          <Link href="/resource">Resources</Link>
+          <Link
+            href="https://www.hindalco.com/upload/pdf/totalis-brochure.pdf"
+            target="_blank"
+          >
+            Brochure
+          </Link>
           <Link href="/contact">Contact Us</Link>
           <Link href="/store">Dealer Locator</Link>
         </div>

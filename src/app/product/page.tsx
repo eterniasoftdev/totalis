@@ -80,7 +80,7 @@ function Page() {
               },
             }}
           >
-            {productCategory.map((productCategory) => {
+            {productCategory.map((productCategory, index) => {
               return (
                 <SwiperSlide>
                   <p
@@ -90,6 +90,7 @@ function Page() {
                         : ""
                     }`}
                     onClick={() => setCurrentProductCategory(productCategory)}
+                    key={index}
                   >
                     {productCategory}
                   </p>

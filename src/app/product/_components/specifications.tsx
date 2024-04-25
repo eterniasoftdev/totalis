@@ -20,8 +20,8 @@ function Specifications({ data }: { data: individualProductType }) {
                 Product Specifications
               </h3>
               <p className="text-xs tracking-wider leading-5 flex flex-col justify-end items-end">
-                {data.specification.map((spec) => (
-                  <p>{spec}</p>
+                {data.specification.map((spec, index) => (
+                  <p key={index}>{spec}</p>
                 ))}
               </p>
             </div>
@@ -43,8 +43,8 @@ function Specifications({ data }: { data: individualProductType }) {
                 Performance Parameters
               </h3>
               <div className="text-xs tracking-wider leading-5">
-                {data.performanceParameters.map((spec) => (
-                  <p>
+                {data.performanceParameters.map((spec, index) => (
+                  <p key={index}>
                     {spec.value}{" "}
                     <span className="text-xs text-gray-600">
                       {spec.subValue}

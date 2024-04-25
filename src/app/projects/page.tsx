@@ -19,12 +19,18 @@ function Projects() {
               `col-span-3 h-[18rem] md:col-span-4 flex flex-col px-4 ` + rowSpan
             }
           >
-            <div className="w-full h-5/6 overflow-hidden">
+            <div className="w-full h-5/6 overflow-hidden group">
               <img
                 src={project.thumbnail}
                 alt=""
                 className="object-cover  w-full h-full overflow-hidden hover:transform hover:translate hover:scale-110 transition-all duration-700"
               />
+              <div className="w-full h-20 py-8 box-border  bg-indigo-800 text-white flex flex-col items-center justify-center gap-1 opacity-90 group-hover:-translate-y-24 transition-all duration-700">
+                <h3 className="text-2xl font-medium">Products Used</h3>
+                {project.products_used.map((product) => (
+                  <p className="text-sm">{product}</p>
+                ))}
+              </div>
             </div>
             <p className="text-center">{project.name}</p>
             <p className="text-center text-xs">{project.location}</p>

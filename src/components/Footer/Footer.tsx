@@ -16,7 +16,12 @@ function Footer() {
             </div>
           </Link>
           <div className="hover:underline hover:underline-offset-2 cursor-pointer">
-            <Link href="/resource">Downloads</Link>
+            <Link
+              href="https://www.hindalco.com/upload/pdf/totalis-brochure.pdf"
+              target="_blank"
+            >
+              Downloads
+            </Link>
           </div>
           <div className="hover:underline hover:underline-offset-2 cursor-pointer">
             <Link href="/contact">Contacts</Link>

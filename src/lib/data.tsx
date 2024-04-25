@@ -86,7 +86,7 @@ export const storeData: storeDataInterface = {
     "Andhra Pradesh": {
       Vijayawada: [
         {
-          storeName: "HARDWAREWORLD",
+          storeName: "HARDWARE WORLD",
           pincode: "834005",
           city: "Vijayawada",
           state: "Andhra Pradesh",

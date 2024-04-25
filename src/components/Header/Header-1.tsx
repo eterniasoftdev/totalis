@@ -40,14 +40,14 @@ function Header() {
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
-
+  console.log("isScroll down", isScrolledDown);
   return (
     <>
       {/* Desktop Header */}
       <div
-        className={`fixed py-8 px-8 box-conatiner flex flex-row gap-x-16 w-screen bg-white z-50 ${
+        className={`fixed py-8 px-8 box-conatiner flex-row gap-x-16 w-screen bg-white z-50 ${
           !isScrolledDown ? "flex" : "hidden"
-        } md:flex`}
+        }`}
       >
         <div className="">
           <Link href="/">
