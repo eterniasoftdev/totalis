@@ -38,15 +38,15 @@ function Page() {
         </p>
         <p>
           Hindalco&apos;s acquisition of Aleris Corporation in April 2020,
-          through its subsidiary Novelis Inc., has cemented the company's
+          through its subsidiary Novelis Inc., has cemented the company&apos;s
           position as the world&apos;s largest flat-rolled products player and
           recycler of aluminium.{" "}
         </p>
         <p>
           Hindalco&apos;s state-of-art copper facility comprises a world-class
           copper smelter and a fertiliser plant along with a captive jetty. The
-          copper smelter is among Asia's largest custom smelters at a single
-          location.
+          copper smelter is among Asia&apos;s largest custom smelters at a
+          single location.
         </p>
         <p>
           In India, the company&apos;s aluminium units across the country
