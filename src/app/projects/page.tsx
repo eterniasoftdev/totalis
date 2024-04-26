@@ -18,6 +18,7 @@ function Projects() {
             className={
               `col-span-3 h-[18rem] md:col-span-4 flex flex-col px-4 ` + rowSpan
             }
+            key={index}
           >
             <div className="w-full h-5/6 overflow-hidden group">
               <img
@@ -27,8 +28,10 @@ function Projects() {
               />
               <div className="w-full h-20 py-8 box-border  bg-indigo-800 text-white flex flex-col items-center justify-center gap-1 opacity-90 group-hover:-translate-y-24 transition-all duration-700">
                 <h3 className="text-2xl font-medium">Products Used</h3>
-                {project.products_used.map((product) => (
-                  <p className="text-sm">{product}</p>
+                {project.products_used.map((product, index) => (
+                  <p className="text-sm" key={index}>
+                    {product}
+                  </p>
                 ))}
               </div>
             </div>

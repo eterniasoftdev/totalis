@@ -112,9 +112,9 @@ const MultiSelectDropdown: React.FC<MultiSelectDropdownProps> = ({
             aria-orientation="vertical"
             aria-labelledby="options-menu"
           >
-            {options.map((option) => (
+            {options.map((option, index) => (
               <label
-                key={option.value}
+                key={index}
                 className="flex items-center px-4 py-2"
                 role="menuitem"
               >
