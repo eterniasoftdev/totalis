@@ -71,9 +71,9 @@ function Page() {
               Unparalleled Strength{" "}
             </p>
             <p className="">
-              Manufactured from Hindalco's high-quality aluminium extrusions,
-              providing unmatched strength as compared to other material
-              windows.
+              Manufactured from Hindalcos&apos; high-quality aluminium
+              extrusions, providing unmatched strength as compared to other
+              material windows.
             </p>
           </div>
           <div className="flex flex-col gap-2 flex-grow">

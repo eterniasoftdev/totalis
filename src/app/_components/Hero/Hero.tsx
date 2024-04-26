@@ -77,8 +77,8 @@ function Hero() {
           <p className="text-lg tracking-wide leading-6">
             Withstand external noise, air leakage, cyclonic winds, heavy rains,
             and dust with ease. Trust in the only company with the mark of
-            authenticity, the world's largest recycler, for unmatched quality
-            and performance.
+            authenticity, the world&apos;s largest recycler, for unmatched
+            quality and performance.
           </p>
           <div className="m-8">
             {/* <Button_Primary text={"Discover The Story"} /> */}

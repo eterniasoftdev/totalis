@@ -11,7 +11,7 @@ function Page() {
         </h1>
         <div className="w-1/2 p-12 h-full bg-orange-50 flex flex-col items-center gap-4 ">
           <p className="text-gray-900 text-sm tracking-wider font-sans">
-            Are you looking for advice? We'd be happy to help you find a
+            Are you looking for advice? We&apos;d be happy to help you find a
             lighting solution!
           </p>
           <div className="">

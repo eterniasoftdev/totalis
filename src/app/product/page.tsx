@@ -79,7 +79,7 @@ function Page() {
           >
             {productCategory.map((productCategory, index) => {
               return (
-                <SwiperSlide>
+                <SwiperSlide key={index}>
                   <p
                     className={`text-base font-semibold text-gray-600 tracking-widest text-center p-2 cursor-pointer ${
                       productCategory == currentProductCategory

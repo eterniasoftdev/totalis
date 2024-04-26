@@ -318,7 +318,7 @@ function ContactForm() {
             name="persona"
           >
             <option value="" disabled selected>
-              User's Persona
+              User&apos;s Persona
             </option>
             <option value="Fabricator">Fabricator</option>
             <option value="Dealer">Dealer</option>

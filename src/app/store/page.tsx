@@ -106,9 +106,12 @@ function Page() {
         ""
       )}
       <div className="grid grid-cols-12 gap-1">
-        {storeList?.map((store) => {
+        {storeList?.map((store, index) => {
           return (
-            <div className="col-span-12 sm:col-span-6 md:col-span-4 h-48 bg-stone-100 py-8 px-4 flex flex-col gap-4 justify-start hyphens-auto overflow-y-auto">
+            <div
+              className="col-span-12 sm:col-span-6 md:col-span-4 h-48 bg-stone-100 py-8 px-4 flex flex-col gap-4 justify-start hyphens-auto overflow-y-auto"
+              key={index}
+            >
               <h3 className="text-xl font-semibold tracking-wide hyphens-auto">
                 {store.storeName
                   .split(" ")
