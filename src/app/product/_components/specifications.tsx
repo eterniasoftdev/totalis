@@ -19,11 +19,11 @@ function Specifications({ data }: { data: individualProductType }) {
               <h3 className="text-3xl font-medium tracking-wider">
                 Product Specifications
               </h3>
-              <p className="text-xs tracking-wider leading-5 flex flex-col justify-end items-end">
+              <div className="text-xs tracking-wider leading-5 flex flex-col justify-end items-end">
                 {data.specification.map((spec, index) => (
                   <p key={index}>{spec}</p>
                 ))}
-              </p>
+              </div>
             </div>
           </div>
           <div className="flex h-full w-full gap-8">

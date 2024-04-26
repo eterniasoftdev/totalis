@@ -31,12 +31,14 @@ function Hero() {
         style={{ transform: `translateX(${-currentImage * 100}%)` }}
       >
         <div className="w-full md:w-2/3 flex flex-col px-8 sm:px-20 items-start pt-24 pb-16 gap-12 ">
-          <p className="text-4xl sm:text-6xl">The Rebel Black Flag </p>
+          <p className="text-4xl sm:text-6xl">
+            Elevate Your Home with Totalis Aluminium Windows
+          </p>
           <p className="text-lg tracking-wide leading-6">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-            quae ab illo inventore veritatis et quasi architecto beatae vitae
-            dicta sunt explicabo.
+            Elevate your home with Totalis Aluminium Windows - meticulously
+            tested to global standards, graded premium in durability, and
+            designed with precision. Experience authenticity marked for quality
+            that speaks volumes about your commitment to excellence.
           </p>
           <div className="m-8">
             {/* <Button_Primary text={"Discover The Story"} /> */}
@@ -51,13 +53,13 @@ function Hero() {
       >
         <div className="w-full md:w-2/3 flex flex-col px-8 sm:px-20 items-start pt-24 pb-16 gap-12 ">
           <p className="text-4xl sm:text-6xl">
-            The Perelman Performing Arts Center
+            Experience the Advantages of Aluminium Windows
           </p>
           <p className="text-lg tracking-wide leading-6">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-            quae ab illo inventore veritatis et quasi architecto beatae vitae
-            dicta sunt explicabo.
+            Totalis Aluminium Windows, crafted for thoughtfully made homes,
+            offer total customization, all-weather protection, supreme
+            finishing, and are endlessly recyclable. Elevate your living space
+            with Totalis.
           </p>
           <div className="m-8">
             {/* <Button_Primary text={"Discover The Story"} /> */}
@@ -71,12 +73,12 @@ function Hero() {
         style={{ transform: `translateX(${-currentImage * 100}%)` }}
       >
         <div className="w-full md:w-2/3 flex flex-col px-8 sm:px-20 items-start pt-24 pb-16 gap-12 ">
-          <p className="text-4xl sm:text-6xl">A light born of shadow</p>
+          <p className="text-4xl sm:text-6xl">Tested, Certified, and Trusted</p>
           <p className="text-lg tracking-wide leading-6">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-            quae ab illo inventore veritatis et quasi architecto beatae vitae
-            dicta sunt explicabo.
+            Withstand external noise, air leakage, cyclonic winds, heavy rains,
+            and dust with ease. Trust in the only company with the mark of
+            authenticity, the world's largest recycler, for unmatched quality
+            and performance.
           </p>
           <div className="m-8">
             {/* <Button_Primary text={"Discover The Story"} /> */}
@@ -90,12 +92,12 @@ function Hero() {
         style={{ transform: `translateX(${-currentImage * 100}%)` }}
       >
         <div className="w-full md:w-2/3 flex flex-col px-8 sm:px-20 items-start pt-24 pb-16 gap-12 ">
-          <p className="text-4xl sm:text-6xl">Gustave at Cromwell Place Café</p>
+          <p className="text-4xl sm:text-6xl">Join the Totalis Experience</p>
           <p className="text-lg tracking-wide leading-6">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-            quae ab illo inventore veritatis et quasi architecto beatae vitae
-            dicta sunt explicabo.
+            Totalis Aluminium Windows offer end-to-end software support during
+            purchase, tested and certified materials, and the highest quality at
+            a reasonable price. Make Totalis your partner in enhancing the
+            beauty and efficiency of your home
           </p>
           <div className="sm:m-8">
             {/* <Button_Primary text={"Discover The Story"} /> */}

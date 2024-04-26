@@ -16,7 +16,7 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         "hero-pattern-1":
           "url('/img/alberto-castillo-q-mx4mSkK9zeo-unsplash.jpg')",
-        "hero-pattern-2": "url('/img/arno-smit-iI72r3gSwWY-unsplash.jpg')",
+        "hero-pattern-2": "url('/img/iwood-R5v8Xtc0ecg-unsplash.jpg')",
         "hero-pattern-3": "url('/img/cat-han-VgyN_CWXQVM-unsplash.jpg')",
         "hero-pattern-4": "url('/img/spacejoy-FX61rYaAfCQ-unsplash.jpg')",
         "hero-pattern-5": "url('/img/spacejoy-9M66C_w_ToM-unsplash.jpg')",

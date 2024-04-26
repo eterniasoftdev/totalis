@@ -25,8 +25,8 @@ export const state = [
   "Telangana",
   "Tripura",
   "Uttar Pradesh",
-  "UttraKhand",
-  "Weest Bengal",
+  "UttaraKhand",
+  "West Bengal",
 ];
 
 // type City = {

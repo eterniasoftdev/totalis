@@ -1,11 +1,12 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import Dropdown from "@/atoms/Form/Dropdown";
 import MultiSelectDropdown from "@/atoms/Form/MultiSelectDropdown";
 import { city, state } from "@/lib/stateData";
+import axios from "axios";
 const options = [
   { label: "Windows", value: "windows" },
   { label: "Doors", value: "doors" },
@@ -36,21 +37,64 @@ function ContactForm() {
     persona: "",
     price: "",
   });
+  const formRef = useRef<HTMLDivElement | null>(null);
+  const [message, setMessage] = useState({
+    show: false,
+    message: "",
+    status: 0,
+  });
   const [cityList, setCityList] = useState<string[]>([]);
+  useEffect(() => {
+    // Scroll to top when message changes
+    if (message.show) {
+      window.scrollTo({
+        top: formRef.current?.offsetTop || 0,
+        behavior: "smooth",
+      });
+    }
+  }, [message]);
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    console.log("Totalis Data", formData);
+    const reqBody = {
+      firstName: formData.name.split(" ")?.[0] || "NA",
+      lastName: formData.name.split(" ")?.[1] || "NA",
+      email: formData.email,
+      mobile: formData.whatsapp,
+      zipCode: formData.pincode,
+      state: formData.state,
+      city: formData.city,
+      User_Persona: formData.persona,
+      Price_Bracket: formData.price,
+      Requirement: formData.usage.map((el) => String(el)),
+      Lead_SubSource: "Totalis Website",
+    };
+    console.log("reqbody", reqBody);
+
     try {
-      const response = await fetch("/api/submitForm", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-      if (response.ok) {
-        console.log("Form submitted successfully");
+      const response = await axios.post(
+        "https://api.eterniasoft.in/api/v1/totalis/createContact",
+        reqBody,
+        {
+          headers: {
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZxemV5eWFqc2ExNTJtYXNta25zZGF3eHpsIiwiaWF0IjoxNzEwMjQ2NTMwLCJleHAiOjE3NDE3ODI1MzB9.FZs-WBCuURHOIpBaEVA_l8cKlmqGcrUQf8iDaHimiik",
+          },
+        }
+      );
+      console.log("response", response.status);
+      if (response.status == 200) {
+        setMessage({
+          show: true,
+          message: "Thankyou for submitting an enquiry",
+          status: 200,
+        });
       } else {
-        console.error("Form submission failed");
+        setMessage({
+          show: true,
+          message: "oops something went wrong",
+          status: 400,
+        });
       }
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -97,8 +141,20 @@ function ContactForm() {
       return { ...prev, usage: selectedOptions };
     });
   };
+  console.log("message", message);
   return (
-    <div className="my-6 p-12 pt-24">
+    <div className="my-6 p-12 pt-24" ref={formRef}>
+      <div>
+        {message.show && (
+          <div
+            className={`text-white text-center font-bold py-2 ${
+              message.status === 200 ? "bg-green-500" : "bg-red-500"
+            }`}
+          >
+            {message.message}
+          </div>
+        )}
+      </div>
       <div className="grid sm:grid-cols-2 items-start gap-16 p-8 mx-auto max-w-4xl bg-white shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] rounded-md text-[#333] font-[sans-serif]">
         <div>
           <h1 className="text-3xl font-extrabold">Submit an Enquiry</h1>
@@ -264,10 +320,10 @@ function ContactForm() {
             <option value="" disabled selected>
               User's Persona
             </option>
-            <option value="fabricator">Fabricator</option>
-            <option value="dealer">Dealer</option>
-            <option value="builder_developer">Builder/Developer</option>
-            <option value="other">Other</option>
+            <option value="Fabricator">Fabricator</option>
+            <option value="Dealer">Dealer</option>
+            <option value="Builder/Developer">Builder/Developer</option>
+            <option value="Others">Other</option>
           </select>
           <select
             className="w-full rounded-md py-3 px-4 bg-gray-100 text-sm outline-[#007bff]"

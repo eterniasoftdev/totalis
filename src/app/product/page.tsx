@@ -18,13 +18,10 @@ function GetComponent(
   switch (selectedCategory) {
     case (selectedCategory = productCategory[0]):
       return <Specifications data={productDetail} />;
-      break;
     case (selectedCategory = productCategory[1]):
       return <Assembly data={productDetail} />;
-      break;
     case (selectedCategory = productCategory[2]):
       return <Typologies data={productDetail} />;
-      break;
     default:
       break;
   }
@@ -106,42 +103,3 @@ function Page() {
 }
 
 export default Page;
-
-{
-  /* <div className="flex flex-wrap p-12 gap-8">
-{products[product as keyof productInterface][
-  currentProductCategory
-]?.map((currentProduct) => {
-  console.log(
-    "current product",
-    products[product as keyof productInterface][
-      currentProductCategory
-    ],
-    currentProduct
-  );
-  return (
-    <>
-      <div className="w-1/4 flex flex-col gap-2 h-60">
-        <Swiper
-          spaceBetween={0}
-          slidesPerView={1}
-          className="h-4/5 w-full cursor-grab"
-        >
-          {currentProduct.imageURL.map((url) => {
-            return (
-              <SwiperSlide>
-                <img src={url} alt="" className="cover" />
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
-        <h3 className="text-center text-2xl ">
-          {currentProduct.title}
-        </h3>
-        <p className="text-center">{currentProduct.subtitle}</p>
-      </div>
-    </>
-  );
-})}
-</div> */
-}

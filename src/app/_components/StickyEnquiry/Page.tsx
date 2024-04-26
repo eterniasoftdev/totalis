@@ -5,7 +5,7 @@ import React from "react";
 import { FaHandsHelping } from "react-icons/fa";
 function StickyNav() {
   return (
-    <div className="sticky top-[500px] left-[1000px] w-0 h-0 z-40">
+    <div className="fixed bottom-4 right-4 z-50">
       <Link href={"/contact"}>
         <Button_Primary_Black
           text="Submit an Enquiry"
