@@ -1,6 +1,6 @@
 "use client";
 import { useSearchParams } from "next/navigation";
-import React from "react";
+import React, { Suspense } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { individualProductType, products } from "../../lib/productData";
@@ -45,60 +45,65 @@ function Page() {
   const productDetail = products?.[product]?.[selectedProductName]?.[0];
   console.log("product detail", productDetail);
   return (
-    <>
-      <div className="w-screen p-12 py-32 grid grid-cols-12 gap-y-12 gap-x-8">
-        <h2 className="col-span-12 text-5xl font-semibold text-center tracking-widest">
-          {product?.slice(0, 1).toUpperCase() + product?.slice(1).toLowerCase()}
-        </h2>
-        <div className="col-span-2 hidden sm:flex flex-col gap-4 justify-start row-start-2 py-12">
-          {Object.keys(products[product])?.map((category, index) => (
-            <button
-              className={`lg:px-4 py-3 text-sm lg:text-lg border border-gray-900 tracking-wider hover:bg-green-600 hover:text-white ${
-                selectedProductName == category ? "text-white bg-green-600" : ""
-              }`}
-              key={index}
-              onClick={() => setSelectedProductName(category)}
+    <Suspense fallback={<div>Loading...</div>}>
+      <>
+        <div className="w-screen p-12 py-32 grid grid-cols-12 gap-y-12 gap-x-8">
+          <h2 className="col-span-12 text-5xl font-semibold text-center tracking-widest">
+            {product?.slice(0, 1).toUpperCase() +
+              product?.slice(1).toLowerCase()}
+          </h2>
+          <div className="col-span-2 hidden sm:flex flex-col gap-4 justify-start row-start-2 py-12">
+            {Object.keys(products[product])?.map((category, index) => (
+              <button
+                className={`lg:px-4 py-3 text-sm lg:text-lg border border-gray-900 tracking-wider hover:bg-green-600 hover:text-white ${
+                  selectedProductName == category
+                    ? "text-white bg-green-600"
+                    : ""
+                }`}
+                key={index}
+                onClick={() => setSelectedProductName(category)}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+          <div className="col-span-12 sm:col-span-10 flex flex-col gap-8">
+            <Swiper
+              className="border-b border-gray-600 flex  sm:flex-row gap-6 sm:gap-12 w-full justify-center"
+              spaceBetween={20}
+              slidesPerView={1}
+              breakpoints={{
+                640: {
+                  slidesPerView: 1,
+                },
+                768: {
+                  slidesPerView: 3,
+                },
+              }}
             >
-              {category}
-            </button>
-          ))}
+              {productCategory.map((productCategory, index) => {
+                return (
+                  <SwiperSlide key={index}>
+                    <p
+                      className={`text-base font-semibold text-gray-600 tracking-widest text-center p-2 cursor-pointer ${
+                        productCategory == currentProductCategory
+                          ? "md:border-b border-gray-900 text-green-600"
+                          : ""
+                      }`}
+                      onClick={() => setCurrentProductCategory(productCategory)}
+                      key={index}
+                    >
+                      {productCategory}
+                    </p>
+                  </SwiperSlide>
+                );
+              })}
+            </Swiper>
+            <div>{GetComponent(currentProductCategory, productDetail)}</div>
+          </div>
         </div>
-        <div className="col-span-12 sm:col-span-10 flex flex-col gap-8">
-          <Swiper
-            className="border-b border-gray-600 flex  sm:flex-row gap-6 sm:gap-12 w-full justify-center"
-            spaceBetween={20}
-            slidesPerView={1}
-            breakpoints={{
-              640: {
-                slidesPerView: 1,
-              },
-              768: {
-                slidesPerView: 3,
-              },
-            }}
-          >
-            {productCategory.map((productCategory, index) => {
-              return (
-                <SwiperSlide key={index}>
-                  <p
-                    className={`text-base font-semibold text-gray-600 tracking-widest text-center p-2 cursor-pointer ${
-                      productCategory == currentProductCategory
-                        ? "md:border-b border-gray-900 text-green-600"
-                        : ""
-                    }`}
-                    onClick={() => setCurrentProductCategory(productCategory)}
-                    key={index}
-                  >
-                    {productCategory}
-                  </p>
-                </SwiperSlide>
-              );
-            })}
-          </Swiper>
-          <div>{GetComponent(currentProductCategory, productDetail)}</div>
-        </div>
-      </div>
-    </>
+      </>
+    </Suspense>
   );
 }
 
