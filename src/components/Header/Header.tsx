@@ -63,7 +63,7 @@ function Header({ setIsChecked, isChecked }: HeaderInterface) {
       {/* Desktop Header */}
       <div
         className={`fixed py-4 px-8 box-conatiner flex flex-row gap-x-16 w-screen bg-white z-50 ${
-          !isScrolledDown ? "flex" : "hidden"
+          !isScrolledDown ? "flex" : "flex md:hidden"
         }`}
       >
         <div className="h-full">
