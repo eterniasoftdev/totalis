@@ -3,7 +3,7 @@ import { projectList } from "./data";
 
 function Projects() {
   return (
-    <div className="p-6  grid sm:grid-cols-6 md:grid-cols-12 md:grid-rows-* gap-y-[2rem]">
+    <div className="p-6  grid sm:grid-cols-6 md:grid-cols-12 md:grid-rows-* gap-y-[2rem] text-black">
       <h1 className="row-span-1 col-span-full text-4xl tracking-wider text-center mb-4 pb-4 border-b">
         Projects
       </h1>

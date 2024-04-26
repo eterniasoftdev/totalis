@@ -40,8 +40,8 @@ function Applications() {
     });
   });
   return (
-    <div className="p-6 grid grid-cols-3 sm:grid-cols-6 xl:grid-cols-12 gap-y-[2rem] gap-x-2 w-screen ">
-      <h1 className="col-span-full text-4xl tracking-wider text-center mb-4 py-4 border-b">
+    <div className="p-6 grid grid-cols-3 sm:grid-cols-6 xl:grid-cols-12 gap-y-[2rem] gap-x-2 w-screen text-black">
+      <h1 className="col-span-full text-4xl tracking-wider text-center mb-4 py-4 border-b text-center">
         Products
       </h1>
       {productArray.map((product, index) => {
@@ -58,7 +58,7 @@ function Applications() {
                 className="object-cover  w-full h-full overflow-hidden hover:transform hover:translate hover:scale-110 transition-all duration-700"
               />
             </div>
-            <p className="text-center">{product.name}</p>
+            <p className="text-center text-black">{product.name}</p>
             {/* <p className="text-center text-xs">{product.title}</p> */}
           </Link>
         );

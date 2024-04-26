@@ -4,7 +4,7 @@ import { individualProductType } from "../../../lib/productData";
 
 function Specifications({ data }: { data: individualProductType }) {
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-full text-black">
       <div className="flex flex-row h-screen p-12 gap-4">
         <div className="hidden lg:block w-1/4 h-full">
           <img

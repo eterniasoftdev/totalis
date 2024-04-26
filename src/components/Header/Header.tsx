@@ -134,7 +134,7 @@ function Header({ setIsChecked, isChecked }: HeaderInterface) {
           </Link>
         </div>
         <div
-          className="flex md:hidden ml-auto  items-center justify-center cursor-pointer"
+          className="flex md:hidden ml-auto  items-center justify-center cursor-pointer text-black"
           onClick={() => {
             setIsChecked((prev) => !prev);
           }}
@@ -151,7 +151,7 @@ function Header({ setIsChecked, isChecked }: HeaderInterface) {
       <div
         className={`fixed translate-x-[-18rem] transition-all duration-700 ${
           isChecked ? "translate-x-[0]" : ""
-        } md:hidden w-[18rem] h-screen bg-white z-40 flex flex-col justify-center items-center`}
+        } md:hidden w-[18rem] h-screen bg-white z-40 flex flex-col justify-center items-center text-black`}
       >
         {/* Mention the mobile header below */}
         <div
