@@ -2,7 +2,7 @@ import React from "react";
 
 function Page() {
   return (
-    <div className="flex flex-col md:flex-row gap-12 p-12 py-32">
+    <div className="flex flex-col md:flex-row gap-12 p-12 py-32 text-black">
       <div className="md:w-1/2 flex flex-col justify-start items-start gap-8">
         <div className="flex flex-col w-3/4 text-white">
           <h1 className="p-2 bg-indigo-800 text-start text-lg">
