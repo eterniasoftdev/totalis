@@ -1,7 +1,6 @@
 import Button_Primary from "@/atoms/Buttons/Button-Primary";
 import React from "react";
-
-function Hero2({ url }: { url: string }) {
+function Hero2() {
   return (
     <div className="w-screen h-screen flex my-8">
       {/* <div className="w-2/5 p-16 text-white gap-4 flex justify-items-end">
@@ -17,7 +16,11 @@ function Hero2({ url }: { url: string }) {
         </div>
       </div> */}
 
-      <img src={url} alt="" className="w-full object-contain" />
+      <img
+        src="/img/Totalis_Leaflet_product.jpg"
+        alt=""
+        className="w-full object-contain"
+      />
     </div>
   );
 }

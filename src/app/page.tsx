@@ -27,7 +27,7 @@ export default function Home() {
       </div>
       <Projects />
       <div className="hidden lg:block">
-        <Hero2 url={"/img/Totalis_Leaflet_product.jpg"} />
+        <Hero2 />
       </div>
       <About />
       <Appointment />
