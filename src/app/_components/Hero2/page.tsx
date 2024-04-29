@@ -1,10 +1,10 @@
 import Button_Primary from "@/atoms/Buttons/Button-Primary";
 import React from "react";
 
-function Hero2() {
+function Hero2({ url }: { url: string }) {
   return (
-    <div className="w-screen h-screen bg-black flex">
-      <div className="w-2/5 p-16 text-white gap-4 flex justify-items-end">
+    <div className="w-screen h-screen flex my-8">
+      {/* <div className="w-2/5 p-16 text-white gap-4 flex justify-items-end">
         <div className="flex flex-col justify-center gap-8">
           <h1 className="text-6xl text-bold">Bespoke</h1>
           <p className="text-lg text-semibold">
@@ -15,8 +15,9 @@ function Hero2() {
             <Button_Primary text={"Unlock Solutions"} className="" />
           </div>
         </div>
-      </div>
-      <img src="/img/bespoke.webp" alt="" className="w-3/5 object-cover" />
+      </div> */}
+
+      <img src={url} alt="" className="w-full object-contain" />
     </div>
   );
 }

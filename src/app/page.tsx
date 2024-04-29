@@ -15,11 +15,16 @@ export default function Home() {
     <main className="flex min-h-screen flex-col overflow-x-hidden ">
       <Hero />
       {/* <Stories /> */}
-      {/* <Hero2 /> */}
 
       <Applications />
       {/* <Solutions /> */}
+      <div className="">
+        <Hero2 url={"/img/Totalis_Web_Banner.jpg"} />
+      </div>
       <Projects />
+      <div className="hidden lg:block">
+        <Hero2 url={"/img/Totalis_Leaflet_product.jpg"} />
+      </div>
       <About />
       <Appointment />
       {/* <ContactUs /> */}
