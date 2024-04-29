@@ -11,7 +11,7 @@ import Typologies from "./_components/typologies";
 const productCategory = ["Specifications", "Assembly", "Popular Typology"];
 function GetComponent(
   selectedCategory: string,
-  productDetail: individualProductType
+  productDetail: individualProductType | undefined
 ) {
   if (!productDetail) return <></>;
   console.log("Selected product...", selectedCategory);
@@ -38,19 +38,25 @@ function Page() {
   const [selectedProductName, setSelectedProductName] = React.useState<string>(
     category || ""
   );
+  // const [productDetail, setProductDetail] =
+  //   React.useState<individualProductType>();
   React.useEffect(() => {
     setCurrentProductCategory(productCategory[0]);
     setSelectedProductName(category || Object.keys(products[product])[0]);
   }, [product, category]);
+  // React.useEffect(() => {
+  //   console.log("selected product detail", product, selectedProductName);
+  //   setProductDetail(products?.[product]?.[selectedProductName]?.[0]);
+  // }, [selectedProductName, product]);
   const productDetail = products?.[product]?.[selectedProductName]?.[0];
-  console.log("product detail", productDetail);
+  console.log("product detail", productDetail, category, product);
   return (
     <>
       <div className="w-screen p-12 py-32 grid grid-cols-12 gap-y-12 gap-x-8">
-        <h2 className="col-span-12 text-5xl font-semibold text-center tracking-widest">
+        <h2 className="col-span-12 text-5xl font-semibold text-center tracking-widest text-black">
           {product?.slice(0, 1).toUpperCase() + product?.slice(1).toLowerCase()}
         </h2>
-        <div className="col-span-2 hidden sm:flex flex-col gap-4 justify-start row-start-2 py-12">
+        <div className="col-span-2 hidden sm:flex flex-col gap-4 justify-start row-start-2 py-12 text-black">
           {Object.keys(products[product])?.map((category, index) => (
             <button
               className={`lg:px-4 py-3 text-sm lg:text-lg border border-gray-900 tracking-wider hover:bg-green-600 hover:text-white ${

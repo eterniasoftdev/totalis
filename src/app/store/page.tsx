@@ -56,7 +56,7 @@ function Page() {
   }, [selectedState, selectedCity]);
   // console.log("store list....", storeList);
   return (
-    <div className="flex flex-col py-32 px-12 gap-12">
+    <div className="flex flex-col py-32 px-12 gap-12 text-black">
       <div className="flex flex-col bg-stone-100 p-12 gap-8 items-center">
         <h1 className="text-2xl font-semibold uppercase tracking-wider">
           Find the distributor nearest to you

@@ -4,7 +4,7 @@ import React from "react";
 
 function Appointment() {
   return (
-    <div className="h-auto md:h-96 flex flex-col gap-4 p-20 px-8 md:px-32 bg-gray-100">
+    <div className="h-auto md:h-96 flex flex-col gap-4 p-20 px-8 md:px-32 bg-gray-100 text-black">
       <h3 className="text-sm font-semibold tracking-widest uppercase">
         Submit an Enquiry
       </h3>

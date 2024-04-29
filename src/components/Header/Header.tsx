@@ -62,7 +62,7 @@ function Header({ setIsChecked, isChecked }: HeaderInterface) {
     <>
       {/* Desktop Header */}
       <div
-        className={`fixed py-4 px-8 box-conatiner flex flex-row gap-x-16 w-screen bg-white z-50 ${
+        className={`fixed py-4 px-8 box-conatiner flex flex-row gap-x-16 w-screen bg-white z-50 text-black ${
           !isScrolledDown ? "flex" : "flex md:hidden"
         }`}
       >
@@ -149,7 +149,7 @@ function Header({ setIsChecked, isChecked }: HeaderInterface) {
         onClick={() => setIsChecked(false)}
       ></div>
       <div
-        className={`fixed translate-x-[-18rem] transition-all duration-700 ${
+        className={`fixed translate-x-[-18rem] transition-all duration-700 text-black ${
           isChecked ? "translate-x-[0]" : ""
         } md:hidden w-[18rem] h-screen bg-white z-40 flex flex-col justify-center items-center text-black`}
       >
@@ -181,7 +181,7 @@ function Header({ setIsChecked, isChecked }: HeaderInterface) {
                 className="absolute bg-white mt-1  flex flex-col gap-1 shadow-lg rounded-md transform translate-y-20"
                 onClick={() => setIsChecked(false)}
               >
-                <Link href="/product?product=Sliding&category=TOT-SD LITE">
+                <Link href="/product?product=Sliding&category=TOT-SD Lite">
                   <div className="cursor-pointer hover:bg-gray-100 px-8 py-2 rounded-md">
                     TOT-SD LITE
                   </div>

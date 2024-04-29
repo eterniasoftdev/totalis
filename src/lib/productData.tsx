@@ -74,7 +74,7 @@ export const products: productInterface = {
         subtitle: "TOT-SD LITE",
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco ",
-        name: "TOT-SD LITE",
+        name: "TOT-SD Lite",
         key: "TOT-SD LITE",
         category: "Sliding",
         specification: [

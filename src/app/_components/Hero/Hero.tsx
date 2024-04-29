@@ -27,7 +27,7 @@ function Hero() {
       className={`w-screen min-h-screen  h-screen flex flex-row overflow-hidden text-white`}
     >
       <div
-        className={`min-w-full min-h-full bg-hero-pattern-1 bg-cover flex flex-row  duration-1000 transform`}
+        className={`min-w-full min-h-full bg-hero-pattern-1 bg-cover flex flex-row duration-1000 transform pt-8 md:pt-0`}
         style={{ transform: `translateX(${-currentImage * 100}%)` }}
       >
         <div className="w-full md:w-2/3 flex flex-col px-8 sm:px-20 items-start pt-24 pb-16 gap-12 ">
@@ -48,7 +48,7 @@ function Hero() {
         <div className=""></div>
       </div>
       <div
-        className={`min-w-full min-h-full bg-hero-pattern-2 bg-cover flex flex-row  duration-1000 transform`}
+        className={`min-w-full min-h-full bg-hero-pattern-2 bg-cover flex flex-row  duration-1000 transform pt-8 md:pt-0`}
         style={{ transform: `translateX(${-currentImage * 100}%)` }}
       >
         <div className="w-full md:w-2/3 flex flex-col px-8 sm:px-20 items-start pt-24 pb-16 gap-12 ">
@@ -69,7 +69,7 @@ function Hero() {
         <div className=""></div>
       </div>
       <div
-        className={`min-w-full min-h-full bg-hero-pattern-3 bg-cover flex flex-row  duration-1000 transform`}
+        className={`min-w-full min-h-full bg-hero-pattern-3 bg-cover flex flex-row  duration-1000 transform pt-8 md:pt-0`}
         style={{ transform: `translateX(${-currentImage * 100}%)` }}
       >
         <div className="w-full md:w-2/3 flex flex-col px-8 sm:px-20 items-start pt-24 pb-16 gap-12 ">
@@ -88,7 +88,7 @@ function Hero() {
         <div className=""></div>
       </div>
       <div
-        className={`min-w-full min-h-full bg-hero-pattern-4 bg-cover flex flex-row  duration-1000 transform`}
+        className={`min-w-full min-h-full bg-hero-pattern-4 bg-cover flex flex-row  duration-1000 transform pt-8 md:pt-0`}
         style={{ transform: `translateX(${-currentImage * 100}%)` }}
       >
         <div className="w-full md:w-2/3 flex flex-col px-8 sm:px-20 items-start pt-24 pb-16 gap-12 ">
