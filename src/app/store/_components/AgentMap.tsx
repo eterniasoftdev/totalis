@@ -2,9 +2,6 @@
 import React from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import { LatLngExpression } from "leaflet";
-import "leaflet/dist/images/marker-icon.png";
-import Leaflet from "leaflet";
 import { AgentType } from "../page";
 // delete Leaflet.Icon.Default.prototype._getIconUrl;
 type props = {
@@ -12,6 +9,7 @@ type props = {
 };
 const AgentMap = ({ agents }: props) => {
   const defaultZoom = 4;
+
   return (
     <div className="pt-24" style={{ height: "600px", width: "100%" }}>
       <MapContainer

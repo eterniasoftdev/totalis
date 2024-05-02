@@ -1,8 +1,11 @@
 "use client";
 import React from "react";
-import AgentMap from "./_components/AgentMap";
+// import AgentMap from "./_components/AgentMap";
 import { LatLngExpression } from "leaflet";
-
+import dynamic from "next/dynamic";
+const AgentMap = dynamic(() => import("./_components/AgentMap"), {
+  ssr: false,
+});
 export type AgentType = {
   name: string;
   latlng: LatLngExpression;

@@ -83,7 +83,7 @@ function Page() {
           </h1>
         </div>
         {whyChooseData.map((data, index) => (
-          <div className="flex flex-col w-full text-sm gap-6">
+          <div className="flex flex-col w-full text-sm gap-6" key={index}>
             <div className="flex flex-col gap-2 flex-grow">
               <p
                 className="text-indigo-800 font-medium cursor-pointer"
@@ -112,7 +112,7 @@ function Page() {
           </h1>
         </div>
         {whyChooseData_2.map((data, index) => (
-          <div className="flex flex-col w-full text-sm gap-6">
+          <div className="flex flex-col w-full text-sm gap-6" key={index}>
             <div className="flex flex-col gap-2 flex-grow">
               <p
                 className="text-indigo-800 font-medium cursor-pointer"
