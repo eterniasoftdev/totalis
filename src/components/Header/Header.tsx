@@ -10,12 +10,15 @@ import { FaUser } from "react-icons/fa";
 import Link from "next/link";
 // import Image from "next/image";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { usePathname } from "next/navigation";
 interface HeaderInterface {
   setIsChecked: Dispatch<SetStateAction<boolean>>;
   isChecked: boolean;
 }
 
 function Header({ setIsChecked, isChecked }: HeaderInterface) {
+  const pathname = usePathname();
+  const isOrigin = pathname == "/" || pathname == "";
   const [isScrolledDown, setIsScrolledDown] = React.useState(true);
   const [prevScrollPos, setPrevScrollPos] = React.useState<number>(0);
   const [isProductsDropdownOpen, setIsProductsDropdownOpen] =
@@ -58,12 +61,13 @@ function Header({ setIsChecked, isChecked }: HeaderInterface) {
   const toggleCasementDropdown = () => {
     setIsCasementDropdownOpen(!isCasementDropdownOpen);
   };
+  console.log("is origin", isOrigin);
   return (
     <>
       {/* Desktop Header */}
       <div
         className={`fixed py-4 px-8 box-conatiner flex flex-row gap-x-16 w-screen bg-white z-50 text-black ${
-          !isScrolledDown ? "flex" : "flex md:hidden"
+          !isScrolledDown ? "flex" : isOrigin ? "flex md:hidden" : "flex"
         }`}
       >
         <div className="h-full">

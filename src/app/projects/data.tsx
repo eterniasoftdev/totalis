@@ -30,18 +30,6 @@ export const projectList = [
     products_used: ["TOT-SD", "TOT-CS"],
   },
   {
-    name: "SUPREME",
-    location: "Pune",
-    thumbnail: "/img/projects/supreme.png",
-    products_used: ["TOT-CS", "TOT-SD PLUS"],
-  },
-  {
-    name: "LOUVNEESH MAMTANI",
-    location: "Lucknow",
-    thumbnail: "/img/projects/shalimar3.jpeg",
-    products_used: ["TOT-CS", "TOT-SD PLUS"],
-  },
-  {
     name: "ELITE SQUARE",
     location: "Lucknow",
     thumbnail: "/img/projects/eldeco_main.png",

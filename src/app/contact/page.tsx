@@ -1,17 +1,12 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
 import Dropdown from "@/atoms/Form/Dropdown";
 import MultiSelectDropdown from "@/atoms/Form/MultiSelectDropdown";
 import { city, state } from "@/lib/stateData";
 import axios from "axios";
 const options = [
-  { label: "Windows", value: "windows" },
-  { label: "Doors", value: "doors" },
-  { label: "Railing", value: "railing" },
-  { label: "Aluminium Sections", value: "aluminium_sections" },
+  { label: "Want To Buy", value: "Want To Buy" },
+  { label: "Become a Partner", value: "Become a Partner" },
 ];
 
 interface formType {
@@ -331,7 +326,7 @@ function ContactForm() {
             name="price"
           >
             <option value="" disabled selected>
-              Price Bracket (Optional)
+              Price Bracket in &#8377;
             </option>
             <option value="<400">Less than 400</option>
             <option value="400-500">400-500</option>

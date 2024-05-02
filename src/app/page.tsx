@@ -18,17 +18,17 @@ export default function Home() {
 
       <Applications />
       {/* <Solutions /> */}
-      <div className="w-screen h-78 flex my-8">
+      {/* <div className="w-screen h-78 flex my-8">
         <img
           src="/img/Totalis_Web_Banner.jpg"
           alt=""
           className="w-full object-cover"
         />
-      </div>
+      </div> */}
       <Projects />
-      <div className="hidden lg:block">
+      {/* <div className="hidden lg:block">
         <Hero2 />
-      </div>
+      </div> */}
       <About />
       <Appointment />
       {/* <ContactUs /> */}

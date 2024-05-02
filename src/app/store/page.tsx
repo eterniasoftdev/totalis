@@ -1,136 +1,60 @@
 "use client";
 import React from "react";
-import { city, state } from "@/lib/stateData";
-import { storeData, storeIndividualInterface } from "@/lib/data";
+import AgentMap from "./_components/AgentMap";
+import { LatLngExpression } from "leaflet";
 
+export type AgentType = {
+  name: string;
+  latlng: LatLngExpression;
+  description: string;
+};
+const agents: AgentType[] = [
+  {
+    name: "Bharat Polyzone Private Limited",
+    latlng: [28.536795394594428, 77.15845149999998],
+    description: "Delhi",
+  },
+  {
+    name: "JK COATING CENTRE",
+    latlng: [19.164785000000006, 72.85322660000001],
+    description: "Mumbai",
+  },
+  {
+    name: "STRONGHOLD TECHNICAL SERVICES",
+    latlng: [22.32498480000001, 73.14569929999999],
+    description: "Gujarat",
+  },
+  {
+    name: "POLARIS INFRASOLUTIONS PVT LTD",
+    latlng: [13.054177700000016, 80.24629009999998],
+    description: "Chennai",
+  },
+  {
+    name: "HARDWARE WORLD",
+    latlng: [15.922096438576768, 80.76101639999997],
+    description: "Vijayawada",
+  },
+  {
+    name: "METAL HOUSE",
+    latlng: [17.412453260202874, 78.40804555000001],
+    description: "Hyderabad",
+  },
+  {
+    name: "CHHATTISGARH WOOD INDUSTRIES",
+    latlng: [21.889680200000015, 83.3549837],
+    description: "Raigarh",
+  },
+  {
+    name: "Sadi Ram Vishwa Prakash",
+    latlng: [26.845002200000014, 80.92745929999998],
+    description: "Lucknow",
+  },
+  // Add more agents as needed
+];
 function Page() {
-  const [selectedState, setSelectedState] = React.useState<string | null>(null);
-  const [selectedCity, setSelectedCity] = React.useState<string | null>(null);
-  const [cityList, setCityList] = React.useState<string[]>([]);
-  let stateList = Object.keys(storeData.India);
-  let initialStoreList: storeIndividualInterface[] = [];
-  Object.keys(storeData).forEach((country) => {
-    Object.keys(storeData[country]).forEach((stateName) => {
-      Object.keys(storeData[country][stateName]).forEach((cityName) => {
-        initialStoreList = [
-          ...initialStoreList,
-          ...storeData[country][stateName][cityName],
-        ];
-      });
-    });
-  });
-  const [storeList, setStoreList] =
-    React.useState<storeIndividualInterface[]>(initialStoreList);
-  React.useEffect(() => {
-    setStoreList([]);
-    if (!selectedState) {
-      Object.keys(storeData).forEach((country) => {
-        Object.keys(storeData[country]).forEach((stateName) => {
-          Object.keys(storeData[country][stateName]).forEach((cityName) => {
-            setStoreList((prev) => [
-              ...prev,
-              ...storeData[country][stateName][cityName],
-            ]);
-          });
-        });
-      });
-    }
-    if (selectedState) {
-      const country = "India";
-      if (!selectedCity) {
-        Object.keys(storeData?.[country]?.[selectedState] || {}).forEach(
-          (cityName) => {
-            setStoreList((prev) => [
-              ...prev,
-              ...(storeData?.[country]?.[selectedState]?.[cityName] || []),
-            ]);
-          }
-        );
-      } else {
-        setStoreList((prev) => [
-          ...prev,
-          ...(storeData?.[country]?.[selectedState]?.[selectedCity] || []),
-        ]);
-      }
-    }
-  }, [selectedState, selectedCity]);
-  // console.log("store list....", storeList);
   return (
-    <div className="flex flex-col py-32 px-12 gap-12 text-black">
-      <div className="flex flex-col bg-stone-100 p-12 gap-8 items-center">
-        <h1 className="text-2xl font-semibold uppercase tracking-wider">
-          Find the distributor nearest to you
-        </h1>
-        <div className="flex flex-col sm:flex-row gap-8">
-          <select
-            className="w-full rounded-md py-3 px-4 bg-white border text-sm outline-[#007bff]"
-            name="state"
-            onChange={(event: React.ChangeEvent<HTMLSelectElement>) => {
-              setSelectedState(event.target.value);
-              setCityList(city[stateList.indexOf(event.target.value)] || []);
-              setSelectedCity(null);
-            }}
-          >
-            <option value="" disabled selected>
-              Select State
-            </option>
-            {stateList.map((data, index) => (
-              <option value={data} className="text-black" key={index}>
-                {data}
-              </option>
-            ))}
-          </select>
-          <select
-            value={selectedCity || ""}
-            className="w-full rounded-md py-3 px-4 bg-white border text-sm outline-[#007bff]"
-            name="city"
-            onChange={(event: React.ChangeEvent<HTMLSelectElement>) =>
-              setSelectedCity(event.target.value)
-            }
-          >
-            <option value="" disabled selected>
-              Select City
-            </option>
-            {cityList.map((data, index) => (
-              <option value={data} className="text-black" key={index}>
-                {data}
-              </option>
-            ))}
-          </select>
-        </div>
-      </div>
-      {/* <h1 className="text-center text-2xl font-medium">All Stores</h1> */}
-      {!storeList.length ? (
-        <p className="text-sm text-center">No store found</p>
-      ) : (
-        ""
-      )}
-      <div className="grid grid-cols-12 gap-1">
-        {storeList?.map((store, index) => {
-          return (
-            <div
-              className="col-span-12 sm:col-span-6 md:col-span-4 h-48 bg-stone-100 py-8 px-4 flex flex-col gap-4 justify-start hyphens-auto overflow-y-auto"
-              key={index}
-            >
-              <h3 className="text-xl font-semibold tracking-wide hyphens-auto">
-                {store.storeName
-                  .split(" ")
-                  .map(
-                    (el) =>
-                      el.slice(0, 1).toUpperCase() + el.slice(1).toLowerCase()
-                  )
-                  .join(" ")}
-              </h3>
-              <div className="flex flex-col gap-1">
-                <h4 className="text-lg font-semibold">Location</h4>
-                <p className="text-sm font-medium">
-                  {store.city}, {store.state}
-                </p>
-              </div>
-            </div>
-          );
-        })}
-      </div>
+    <div>
+      <AgentMap agents={agents} />
     </div>
   );
 }

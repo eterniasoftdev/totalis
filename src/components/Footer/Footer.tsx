@@ -76,7 +76,7 @@ function Footer() {
             </li>
           </Link>
         </ul>
-        <div className="">
+        <div className="bg-white p-2">
           <Link href="/">
             <Image
               src="/img/Totalis_Logo_crop.png"

@@ -15,9 +15,7 @@ function Projects() {
         if (pos == 1 || pos == 3) rowSpan = "md:row-span-6 md:h-[18rem]";
         return (
           <div
-            className={
-              `col-span-3 h-[18rem] md:col-span-4 flex flex-col px-4 ` + rowSpan
-            }
+            className={`col-span-3 h-[18rem] md:col-span-4 flex flex-col px-4 `}
             key={index}
           >
             <div className="w-full h-5/6 overflow-hidden group">
