@@ -4,6 +4,7 @@ import Dropdown from "@/atoms/Form/Dropdown";
 import MultiSelectDropdown from "@/atoms/Form/MultiSelectDropdown";
 import { city, state } from "@/lib/stateData";
 import axios from "axios";
+import Link from "next/link";
 const options = [
   { label: "Want To Buy", value: "Want To Buy" },
   { label: "Become a Partner", value: "Become a Partner" },
@@ -334,6 +335,26 @@ function ContactForm() {
             <option value="600-800">600-800</option>
             <option value=">800">Greater than 800</option>
           </select>
+          <div className="flex items-start">
+            <input
+              type="checkbox"
+              name="agree"
+              id="agree"
+              className="mr-2"
+              required
+            />
+            <label htmlFor="agree" className="text-sm text-gray-600">
+              I agree with the{" "}
+              <Link href={"static/privacy"} className="underline">
+                privacy policy
+              </Link>{" "}
+              and{" "}
+              <Link href={"static/t&c"} className="underline">
+                terms and conditions{" "}
+              </Link>{" "}
+              of Totalis
+            </label>
+          </div>
           <button
             type="submit"
             className="text-white bg-[#78B533] hover:bg-blue-600 font-semibold rounded-md text-sm px-4 py-3 w-full"

@@ -1,7 +1,7 @@
 export interface individualProductType {
   imageURL: string[];
   assembly: Array<{ imageurl: string; title: string }>;
-  typologies: Array<{ imageurl: string; title: string }>;
+  typologies: Array<{ imageurl: string; title: string; className?: string }>;
   title: string;
   subtitle: string;
   description: string;
@@ -40,34 +40,24 @@ export const products: productInterface = {
         ],
         typologies: [
           {
-            imageurl:
-              "/img/products/tot_sd_lite/typologies/Screenshot 2024-03-28 104315.png",
-            title: "",
+            imageurl: "/img/typology/2T2S.gif",
+            title: "2T 2S",
           },
           {
-            imageurl:
-              "/img/products/tot_sd_lite/typologies/Screenshot 2024-03-28 104413.png",
-            title: "",
+            imageurl: "/img/typology/3T3S.gif",
+            title: "2T 3S",
           },
           {
-            imageurl:
-              "/img/products/tot_sd_lite/typologies/Screenshot 2024-03-28 104538.png",
-            title: "",
+            imageurl: "/img/typology/Fixed + Openable.gif",
+            title: "Fixed + Openable",
           },
           {
-            imageurl:
-              "/img/products/tot_sd_lite/typologies/Screenshot 2024-03-28 104640.png",
-            title: "",
+            imageurl: "/img/typology/2T4S.gif",
+            title: "2T 4S",
           },
           {
-            imageurl:
-              "/img/products/tot_sd_lite/typologies/Screenshot 2024-03-28 104721.png",
-            title: "",
-          },
-          {
-            imageurl:
-              "/img/products/tot_sd_lite/typologies/Screenshot 2024-03-28 104807.png",
-            title: "",
+            imageurl: "/img/typology/2T2S + Fixed.gif",
+            title: "2T 2S + Fixed",
           },
         ],
         title: "Sliding Windows",
@@ -108,34 +98,24 @@ export const products: productInterface = {
         ],
         typologies: [
           {
-            imageurl:
-              "/img/products/tot_sd/typologies/Screenshot 2024-04-08 193614.png",
-            title: "",
+            imageurl: "/img/typology/2T2S.gif",
+            title: "2T 2S",
           },
           {
-            imageurl:
-              "/img/products/tot_sd/typologies/Screenshot 2024-04-08 193614Screenshot 2024-04-08 193658.png",
-            title: "",
+            imageurl: "/img/typology/3T3S.gif",
+            title: "2T 3S",
           },
           {
-            imageurl:
-              "/img/products/tot_sd/typologies/Screenshot 2024-04-08 193721.png",
-            title: "",
+            imageurl: "/img/typology/Fixed + Openable.gif",
+            title: "Fixed + Openable",
           },
           {
-            imageurl:
-              "/img/products/tot_sd/typologies/Screenshot 2024-04-08 193758.png",
-            title: "",
+            imageurl: "/img/typology/2T4S.gif",
+            title: "2T 4S",
           },
           {
-            imageurl:
-              "/img/products/tot_sd/typologies/Screenshot 2024-04-08 193815.png",
-            title: "",
-          },
-          {
-            imageurl:
-              "/img/products/tot_sd/typologies/Screenshot 2024-04-08 193831.png",
-            title: "",
+            imageurl: "/img/typology/2T2S + Fixed.gif",
+            title: "2T 2S + Fixed",
           },
         ],
         assembly: [
@@ -188,34 +168,24 @@ export const products: productInterface = {
         ],
         typologies: [
           {
-            imageurl:
-              "/img/products/tot_sd_plus/typologies/Screenshot 2024-04-08 194253.png",
-            title: "",
+            imageurl: "/img/typology/2T2S.gif",
+            title: "2T 2S",
           },
           {
-            imageurl:
-              "/img/products/tot_sd_plus/typologies/Screenshot 2024-04-08 194304.png",
-            title: "",
+            imageurl: "/img/typology/3T3S.gif",
+            title: "2T 3S",
           },
           {
-            imageurl:
-              "/img/products/tot_sd_plus/typologies/Screenshot 2024-04-08 194335.png",
-            title: "",
+            imageurl: "/img/typology/Fixed + Openable.gif",
+            title: "Fixed + Openable",
           },
           {
-            imageurl:
-              "/img/products/tot_sd_plus/typologies/Screenshot 2024-04-08 194356.png",
-            title: "",
+            imageurl: "/img/typology/2T4S.gif",
+            title: "2T 4S",
           },
           {
-            imageurl:
-              "/img/products/tot_sd_plus/typologies/Screenshot 2024-04-08 194416.png",
-            title: "",
-          },
-          {
-            imageurl:
-              "/img/products/tot_sd_plus/typologies/Screenshot 2024-04-08 194319.png",
-            title: "",
+            imageurl: "/img/typology/2T2S + Fixed.gif",
+            title: "2T 2S + Fixed",
           },
         ],
         assembly: [
@@ -282,48 +252,36 @@ export const products: productInterface = {
         ],
         typologies: [
           {
-            imageurl:
-              "/img/products/tot-cs/typologies/Screenshot 2024-04-08 194648.png",
-            title: "",
+            imageurl: "/img/typology/2T2S.gif",
+            title: "2T 2S",
           },
           {
-            imageurl: "/img/products/tot-cs/Screenshot 2024-04-08 194725.png",
-            title: "",
+            imageurl: "/img/typology/3T3S.gif",
+            title: "2T 3S",
           },
           {
-            imageurl:
-              "/img/products/tot-cs/typologies/Screenshot 2024-04-08 194743.png",
-            title: "",
+            imageurl: "/img/typology/2T4S.gif",
+            title: "2T 4S",
           },
           {
-            imageurl:
-              "/img/products/tot-cs/typologies/Screenshot 2024-04-08 194809.png",
-            title: "",
+            imageurl: "/img/typology/2T2S + Fixed.gif",
+            title: "2T 2S + Fixed",
           },
           {
-            imageurl:
-              "/img/products/tot-cs/typologies/Screenshot 2024-04-08 194828.png",
-            title: "",
+            imageurl: "/img/typology/Side Hung 2.gif",
+            title: "Side Hung",
           },
           {
-            imageurl:
-              "/img/products/tot-cs/typologies/Screenshot 2024-04-08 194852.png",
-            title: "",
+            imageurl: "/img/typology/Top Hung.gif",
+            title: "Top Hung",
           },
           {
-            imageurl:
-              "/img/products/tot-cs/typologies/Screenshot 2024-04-08 194912.png",
-            title: "",
+            imageurl: "/img/typology/Bottom Hung.gif",
+            title: "Bottom Hung",
           },
           {
-            imageurl:
-              "/img/products/tot-cs/typologies/Screenshot 2024-04-08 194929.png",
-            title: "",
-          },
-          {
-            imageurl:
-              "/img/products/tot-cs/typologies/Screenshot 2024-04-08 194951.png",
-            title: "",
+            imageurl: "/img/typology/Top Hung + Fixed.gif",
+            title: "Top Hung + Fixed",
           },
         ],
         title: "Title",

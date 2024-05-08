@@ -14,11 +14,10 @@ const config: Config = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-        "hero-pattern-1":
-          "url('/img/alberto-castillo-q-mx4mSkK9zeo-unsplash.jpg')",
-        "hero-pattern-2": "url('/img/iwood-R5v8Xtc0ecg-unsplash.jpg')",
-        "hero-pattern-3": "url('/img/cat-han-VgyN_CWXQVM-unsplash.jpg')",
-        "hero-pattern-4": "url('/img/spacejoy-FX61rYaAfCQ-unsplash.jpg')",
+        "hero-pattern-1": "url('/img/banner/img33.jpg')",
+        "hero-pattern-2": "url('/img/banner/img466.jpg')",
+        "hero-pattern-3": "url('/img/banner/img55.jpg')",
+        "hero-pattern-4": "url('/img/banner/image-000.png')",
         "hero-pattern-5": "url('/img/spacejoy-9M66C_w_ToM-unsplash.jpg')",
         "hero-pattern-6":
           "url('/img/francesca-tosolini-rYZkQdz2t9o-unsplash.jpg')",
