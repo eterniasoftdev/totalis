@@ -48,7 +48,7 @@ export const products: productInterface = {
             title: "2T 3S",
           },
           {
-            imageurl: "/img/typology/Fixed + Openable.gif",
+            imageurl: "/img/typology/FixedOpenable.gif",
             title: "Fixed + Openable",
           },
           {
@@ -56,7 +56,7 @@ export const products: productInterface = {
             title: "2T 4S",
           },
           {
-            imageurl: "/img/typology/2T2S + Fixed.gif",
+            imageurl: "/img/typology/2T2SFixed.gif",
             title: "2T 2S + Fixed",
           },
         ],
@@ -106,7 +106,7 @@ export const products: productInterface = {
             title: "2T 3S",
           },
           {
-            imageurl: "/img/typology/Fixed + Openable.gif",
+            imageurl: "/img/typology/FixedOpenable.gif",
             title: "Fixed + Openable",
           },
           {
@@ -114,7 +114,7 @@ export const products: productInterface = {
             title: "2T 4S",
           },
           {
-            imageurl: "/img/typology/2T2S + Fixed.gif",
+            imageurl: "/img/typology/2T2SFixed.gif",
             title: "2T 2S + Fixed",
           },
         ],
@@ -176,7 +176,7 @@ export const products: productInterface = {
             title: "2T 3S",
           },
           {
-            imageurl: "/img/typology/Fixed + Openable.gif",
+            imageurl: "/img/typology/FixedOpenable.gif",
             title: "Fixed + Openable",
           },
           {
@@ -184,7 +184,7 @@ export const products: productInterface = {
             title: "2T 4S",
           },
           {
-            imageurl: "/img/typology/2T2S + Fixed.gif",
+            imageurl: "/img/typology/2T2SFixed.gif",
             title: "2T 2S + Fixed",
           },
         ],
@@ -264,23 +264,23 @@ export const products: productInterface = {
             title: "2T 4S",
           },
           {
-            imageurl: "/img/typology/2T2S + Fixed.gif",
+            imageurl: "/img/typology/2T2SFixed.gif",
             title: "2T 2S + Fixed",
           },
           {
-            imageurl: "/img/typology/Side Hung 2.gif",
+            imageurl: "/img/typology/SideHung.gif",
             title: "Side Hung",
           },
           {
-            imageurl: "/img/typology/Top Hung.gif",
+            imageurl: "/img/typology/TopHung.gif",
             title: "Top Hung",
           },
           {
-            imageurl: "/img/typology/Bottom Hung.gif",
+            imageurl: "/img/typology/BottomHung.gif",
             title: "Bottom Hung",
           },
           {
-            imageurl: "/img/typology/Top Hung + Fixed.gif",
+            imageurl: "/img/typology/TopHungFixed.gif",
             title: "Top Hung + Fixed",
           },
         ],
