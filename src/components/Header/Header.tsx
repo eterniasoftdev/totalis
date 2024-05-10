@@ -85,9 +85,9 @@ function Header({ setIsChecked, isChecked }: HeaderInterface) {
         <div className="hidden md:flex flex-row gap-x-6 text-sm tracking-wider font-medium">
           <Link href="/why" className="flex items-center">
             Why Totalis{" "}
-            <div className="ml-1">
+            {/* <div className="ml-1">
               <IoIosArrowDown />
-            </div>
+            </div> */}
           </Link>
           <div
             className="cursor-pointer flex items-center"
@@ -124,17 +124,28 @@ function Header({ setIsChecked, isChecked }: HeaderInterface) {
           </Link>
 
           <Link href="/contact" className="flex items-center">
-            Contact Us{" "}
-            <div className="ml-1">
+            Enquiry{" "}
+            {/* <div className="ml-1">
               <IoIosArrowDown />
-            </div>
+            </div> */}
           </Link>
+          <a
+            href="https://help.totalis.in"
+            className="flex items-center"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Help Portal
+            {/* <div className="ml-1">
+    <IoIosArrowDown />
+  </div> */}
+          </a>
         </div>
 
         <div className="hidden md:flex gap-x-8 flex-row ml-auto text-2xl font-semibold">
           <Link href="/store" className="flex flex-row gap-2 items-center">
             <IoIosPin />
-            <p className="text-xs">Dealer Locator</p>
+            <p className="text-lg">Dealer Locator</p>
           </Link>
         </div>
         <div

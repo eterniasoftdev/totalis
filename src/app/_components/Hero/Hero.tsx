@@ -31,6 +31,7 @@ function Hero() {
         style={{ transform: `translateX(${-currentImage * 100}%)` }}
       >
         <div className="w-full md:w-2/3 flex flex-col px-8 sm:px-20 items-start pt-24 pb-16 gap-12 ">
+        <div className="text-container bg-black bg-opacity-25 p-8 rounded-lg">
           <p className="text-4xl sm:text-6xl">
             Elevate Your Home with Totalis Aluminium Windows
           </p>
@@ -40,6 +41,8 @@ function Hero() {
             designed with precision. Experience authenticity marked for quality
             that speaks volumes about your commitment to excellence.
           </p>
+          </div>
+
           <div className="m-8">
             {/* <Button_Primary text={"Discover The Story"} /> */}
           </div>
@@ -52,6 +55,8 @@ function Hero() {
         style={{ transform: `translateX(${-currentImage * 100}%)` }}
       >
         <div className="w-full md:w-2/3 flex flex-col px-8 sm:px-20 items-start pt-24 pb-16 gap-12 ">
+        <div className="text-container bg-black bg-opacity-25 p-8 rounded-lg">
+
           <p className="text-4xl sm:text-6xl">
             Experience the Advantages of Aluminium Windows
           </p>
@@ -61,6 +66,7 @@ function Hero() {
             finishing, and are endlessly recyclable. Elevate your living space
             with Totalis.
           </p>
+          </div>
           <div className="m-8">
             {/* <Button_Primary text={"Discover The Story"} /> */}
           </div>
@@ -73,6 +79,8 @@ function Hero() {
         style={{ transform: `translateX(${-currentImage * 100}%)` }}
       >
         <div className="w-full md:w-2/3 flex flex-col px-8 sm:px-20 items-start pt-24 pb-16 gap-12 ">
+        <div className="text-container bg-black bg-opacity-25 p-8 rounded-lg">
+
           <p className="text-4xl sm:text-6xl">Tested, Certified, and Trusted</p>
           <p className="text-lg tracking-wide leading-6">
             Withstand external noise, air leakage, cyclonic winds, heavy rains,
@@ -80,6 +88,7 @@ function Hero() {
             authenticity, the world&apos;s largest recycler, for unmatched
             quality and performance.
           </p>
+          </div>
           <div className="m-8">
             {/* <Button_Primary text={"Discover The Story"} /> */}
           </div>
@@ -92,6 +101,8 @@ function Hero() {
         style={{ transform: `translateX(${-currentImage * 100}%)` }}
       >
         <div className="w-full md:w-2/3 flex flex-col px-8 sm:px-20 items-start pt-24 pb-16 gap-12 ">
+        <div className="text-container bg-black bg-opacity-25 p-8 rounded-lg">
+
           <p className="text-4xl sm:text-6xl">Join the Totalis Experience</p>
           <p className="text-lg tracking-wide leading-6">
             Totalis Aluminium Windows offer end-to-end software support during
@@ -99,6 +110,7 @@ function Hero() {
             a reasonable price. Make Totalis your partner in enhancing the
             beauty and efficiency of your home
           </p>
+          </div>
           <div className="sm:m-8">
             {/* <Button_Primary text={"Discover The Story"} /> */}
           </div>
