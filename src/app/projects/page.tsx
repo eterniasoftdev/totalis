@@ -25,7 +25,7 @@ function Projects() {
                 className="object-cover  w-full h-full overflow-hidden hover:transform hover:translate hover:scale-110 transition-all duration-700"
               />
               <div className="w-full h-20 py-8 box-border  bg-indigo-800 text-white flex flex-col items-center justify-center gap-1 opacity-90 group-hover:-translate-y-24 transition-all duration-700">
-                <h3 className="text-2xl font-medium">Products Used</h3>
+                <p className="text-2xl font-medium">Products Used</p>
                 {project.products_used.map((product, index) => (
                   <p className="text-sm" key={index}>
                     {product}

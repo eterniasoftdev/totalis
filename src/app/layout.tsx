@@ -6,6 +6,7 @@ import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import StickyNav from "./_components/StickyEnquiry/Page";
 import { Suspense, useState } from "react";
+import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,6 +25,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <div className={`w - screen ${isChecked ? "md:h-screen" : ""}`}>
+        <Head>
+                <title>Totalis</title>
+                <meta name="description" content="An Eternia Windows Product" />
+                <meta name="keywords" content="totalis, windows, aluminium" />
+                {/* Add more metadata tags as needed */}
+            </Head>
           <Header setIsChecked={setIsChecked} isChecked={isChecked} />
           <Suspense fallback={<div>Loading...</div>}>
             <div className="relative z-30">{children}</div>

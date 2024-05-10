@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next dev -p 3003",
-    "lint": "next lint"
+    "lint": "next lint",
+    "start2":"next start"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",

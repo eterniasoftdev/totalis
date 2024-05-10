@@ -35,11 +35,18 @@ function Footer() {
             </Link>
           </div>
         </div>
-        <div className="flex flex-col items-start sm:w-1/4">
+        <div className="flex flex-col justify-between sm:w-1/4">
           <div className="flex flex-col sm:gap-4">
-            <h1 className="text-xl">Follow us</h1>
-            <div className="flex gap-4">
-              {/* <i className="text-3xl">
+            <Link href="/store" className="flex gap-4">
+              <i className="text-2xl">
+                <FaLocationPin />
+              </i>
+              <p className="text-xl">Dealer Locator</p>
+            </Link>
+            <div className="mt-8">
+              <h1 className="text-xl">Follow us</h1>
+              <div className="flex gap-4">
+                {/* <i className="text-3xl">
                 <FaFacebook />
               </i>
               <i className="text-3xl">
@@ -48,33 +55,27 @@ function Footer() {
               <i className="text-3xl">
                 <FaTwitter />
               </i> */}
-              <i className="text-3xl">
-                <FaLinkedin />
-              </i>
+                <i className="text-3xl">
+                  <FaLinkedin />
+                </i>
+              </div>
             </div>
-
-            <Link href="/store" className="flex gap-4 mt-8 sm:mt-24">
-              <i className="text-xl">
-                <FaLocationPin />
-              </i>
-              <p>Dealer Locator</p>
-            </Link>
           </div>
         </div>
       </div>
       <div className="border-t"></div>
       <div className="flex flex-row gap-12 justify-between">
         <ul className="flex gap-8 text-gray-300 list-disc">
+            <li className="hover:underline hover:underline-offset-2 cursor-pointer">
           <Link href="/static/t&c">
-            <li className="hover:underline hover:underline-offset-2 cursor-pointer">
               General Terms and Conditions of Sale and Guarantees
-            </li>
           </Link>
-          <Link href="/static/privacy">
+            </li>
             <li className="hover:underline hover:underline-offset-2 cursor-pointer">
+          <Link href="/static/privacy">
               Privacy & Legal Notices
-            </li>
           </Link>
+            </li>
         </ul>
         <div className="bg-white p-2">
           <Link href="/">
