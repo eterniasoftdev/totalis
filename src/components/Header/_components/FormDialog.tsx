@@ -160,8 +160,10 @@ export function DialogBasicDetail() {
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
-                        {state.map((el) => (
-                          <SelectItem value={el}>{el}</SelectItem>
+                        {state.map((el, index) => (
+                          <SelectItem value={el} key={index}>
+                            {el}
+                          </SelectItem>
                         ))}
                       </SelectContent>
                     </Select>
