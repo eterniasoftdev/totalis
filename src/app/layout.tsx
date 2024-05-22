@@ -2,6 +2,7 @@
 // import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { Inter as FontSans } from "next/font/google";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import StickyNav from "./_components/StickyEnquiry/Page";
@@ -25,12 +26,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <div className={`w - screen ${isChecked ? "md:h-screen" : ""}`}>
-        <Head>
-                <title>Totalis</title>
-                <meta name="description" content="An Eternia Windows Product" />
-                <meta name="keywords" content="totalis, windows, aluminium" />
-                {/* Add more metadata tags as needed */}
-            </Head>
+          <Head>
+            <title>Totalis</title>
+            <meta name="description" content="An Eternia Windows Product" />
+            <meta name="keywords" content="totalis, windows, aluminium" />
+            {/* Add more metadata tags as needed */}
+          </Head>
           <Header setIsChecked={setIsChecked} isChecked={isChecked} />
           <Suspense fallback={<div>Loading...</div>}>
             <div className="relative z-30">{children}</div>

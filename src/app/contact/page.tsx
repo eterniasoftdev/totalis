@@ -53,13 +53,13 @@ function ContactForm() {
     e.preventDefault();
     console.log("Totalis Data", formData);
     const reqBody = {
-      firstName: formData.name.split(" ")?.[0] || "NA",
-      lastName: formData.name.split(" ")?.[1] || "NA",
-      email: formData.email,
-      mobile: formData.whatsapp,
-      zipCode: formData.pincode,
-      state: formData.state,
-      city: formData.city,
+      First_Name: formData.name.split(" ")?.[0] || "NA",
+      Last_Name: formData.name.split(" ")?.[1] || "NA",
+      Email: formData.email,
+      Mobile: formData.whatsapp,
+      Zip_Code: formData.pincode,
+      State_Name: formData.state,
+      City: formData.city,
       User_Persona: formData.persona,
       Price_Bracket: formData.price,
       Requirement: formData.usage.map((el) => String(el)),

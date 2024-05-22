@@ -11,6 +11,7 @@ import Link from "next/link";
 // import Image from "next/image";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { usePathname } from "next/navigation";
+import { DialogBasicDetail } from "./_components/FormDialog";
 interface HeaderInterface {
   setIsChecked: Dispatch<SetStateAction<boolean>>;
   isChecked: boolean;
@@ -112,16 +113,15 @@ function Header({ setIsChecked, isChecked }: HeaderInterface) {
               </div>
             )}
           </div>
-          <Link
+          {/* <Link
             href="https://www.hindalco.com/upload/pdf/totalis-brochure.pdf"
             target="_blank"
             className="flex items-center"
           >
             Brochure{" "}
-            {/* <div className="ml-1">
-              <IoIosArrowDown />
-            </div> */}
-          </Link>
+          </Link> */}
+
+          <DialogBasicDetail />
 
           <Link href="/contact" className="flex items-center">
             Enquiry{" "}
@@ -238,12 +238,13 @@ function Header({ setIsChecked, isChecked }: HeaderInterface) {
               </div>
             )}
           </div>
-          <Link
+          {/* <Link
             href="https://www.hindalco.com/upload/pdf/totalis-brochure.pdf"
             target="_blank"
           >
             Brochure
-          </Link>
+          </Link> */}
+          <DialogBasicDetail />
           <Link href="/contact">Contact Us</Link>
           <Link href="/store">Dealer Locator</Link>
         </div>

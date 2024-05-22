@@ -252,22 +252,6 @@ export const products: productInterface = {
         ],
         typologies: [
           {
-            imageurl: "/img/typology/2T2S.gif",
-            title: "2T 2S",
-          },
-          {
-            imageurl: "/img/typology/3T3S.gif",
-            title: "2T 3S",
-          },
-          {
-            imageurl: "/img/typology/2T4S.gif",
-            title: "2T 4S",
-          },
-          {
-            imageurl: "/img/typology/2T2SFixed.gif",
-            title: "2T 2S + Fixed",
-          },
-          {
             imageurl: "/img/typology/SideHung.gif",
             title: "Side Hung",
           },
