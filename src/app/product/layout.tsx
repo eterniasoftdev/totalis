@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 export const metadata: Metadata = {
   title: "Totalis-Products",
   description: "Sliding Windows, Casement, Doors. ",
@@ -8,5 +9,5 @@ export default function ProductLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <>{children}</>;
+  return <Suspense>{children}</Suspense>;
 }
