@@ -7,6 +7,7 @@ import { individualProductType, products } from "../../lib/productData";
 import Specifications from "./_components/specifications";
 import Assembly from "./_components/assembly";
 import Typologies from "./_components/typologies";
+import { Suspense } from "react";
 
 const productCategory = ["Specifications", "Assembly", "Popular Typology"];
 function GetComponent(
@@ -51,7 +52,7 @@ function Page() {
   const productDetail = products?.[product]?.[selectedProductName]?.[0];
 
   return (
-    <>
+    <Suspense>
       <div className="w-screen p-12 py-32 grid grid-cols-12 gap-y-12 gap-x-8">
         <h2 className="col-span-12 text-5xl font-semibold text-center tracking-widest text-black">
           {product?.slice(0, 1).toUpperCase() + product?.slice(1).toLowerCase()}
@@ -104,7 +105,7 @@ function Page() {
           <div>{GetComponent(currentProductCategory, productDetail)}</div>
         </div>
       </div>
-    </>
+    </Suspense>
   );
 }
 
