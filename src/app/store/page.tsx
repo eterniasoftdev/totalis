@@ -3,9 +3,9 @@ import React from "react";
 // import AgentMap from "./_components/AgentMap";
 import { LatLngExpression } from "leaflet";
 import dynamic from "next/dynamic";
-const AgentMap = dynamic(() => import("./_components/AgentMap"), {
-  ssr: false,
-});
+// const AgentMap = dynamic(() => import("./_components/AgentMap"), {
+//   ssr: false,
+// });
 export type AgentType = {
   name: string;
   latlng: LatLngExpression;
@@ -55,9 +55,25 @@ const agents: AgentType[] = [
   // Add more agents as needed
 ];
 function Page() {
+  const defaultProps = {
+    center: {
+      lat: 10.99835602,
+      lng: 77.01502627,
+    },
+    zoom: 11,
+  };
+  // return (
+  //   <div>
+  //     <AgentMap agents={agents} />
+  //   </div>
+  // );
   return (
-    <div>
-      <AgentMap agents={agents} />
+    <div className="w-screen h-screen pt-28 ">
+      <img
+        src="/img/location-map.png"
+        alt=""
+        className="object-contain h-full w-full"
+      />
     </div>
   );
 }

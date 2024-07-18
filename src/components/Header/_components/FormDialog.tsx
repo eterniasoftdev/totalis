@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
+  DialogClose,
   DialogContent,
   DialogDescription,
   DialogFooter,
@@ -33,6 +34,7 @@ import {
 import { state } from "@/lib/stateData";
 import Link from "next/link";
 import axios from "axios";
+import React, { useRef } from "react";
 const nameRegex = /^[a-zA-Z\s'-]+$/;
 
 // Mobile number validation regex
@@ -60,6 +62,7 @@ export function DialogBasicDetail() {
       state: "",
     },
   });
+  const closeButton = useRef<HTMLButtonElement>(null);
   async function onSubmit(values: z.infer<typeof formSchema>) {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
@@ -87,9 +90,11 @@ export function DialogBasicDetail() {
       "_blank"
     );
     if (response.status == 200) {
+      closeButton.current?.click();
       form.reset();
     }
   }
+
   return (
     <Dialog>
       <DialogTrigger asChild className="">
@@ -177,9 +182,11 @@ export function DialogBasicDetail() {
                   target="_blank"
                   className="mr-auto"
                 >
-                  <Button type="button" variant="ghost">
-                    Skip
-                  </Button>
+                  <DialogClose asChild>
+                    <Button type="button" variant="ghost" ref={closeButton}>
+                      Skip
+                    </Button>
+                  </DialogClose>
                 </Link>
                 <Button type="submit">Submit</Button>
               </DialogFooter>

@@ -8,6 +8,7 @@ import Footer from "@/components/Footer/Footer";
 import StickyNav from "./_components/StickyEnquiry/Page";
 import { Suspense, useState } from "react";
 import Head from "next/head";
+import { Toaster } from "@/components/ui/toaster";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -35,6 +36,7 @@ export default function RootLayout({
           <Header setIsChecked={setIsChecked} isChecked={isChecked} />
           <Suspense fallback={<div>Loading...</div>}>
             <div className="relative z-30">{children}</div>
+            <Toaster />
           </Suspense>
           <Footer />
           <StickyNav />

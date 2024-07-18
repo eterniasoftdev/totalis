@@ -1,10 +1,10 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import Dropdown from "@/atoms/Form/Dropdown";
 import MultiSelectDropdown from "@/atoms/Form/MultiSelectDropdown";
 import { city, state } from "@/lib/stateData";
 import axios from "axios";
 import Link from "next/link";
+import { useToast } from "@/components/ui/use-toast";
 const options = [
   { label: "Want To Buy", value: "Want To Buy" },
   { label: "Become a Partner", value: "Become a Partner" },
@@ -33,22 +33,10 @@ function ContactForm() {
     persona: "",
     price: "",
   });
+  const { toast } = useToast();
+
   const formRef = useRef<HTMLDivElement | null>(null);
-  const [message, setMessage] = useState({
-    show: false,
-    message: "",
-    status: 0,
-  });
   const [cityList, setCityList] = useState<string[]>([]);
-  useEffect(() => {
-    // Scroll to top when message changes
-    if (message.show) {
-      window.scrollTo({
-        top: formRef.current?.offsetTop || 0,
-        behavior: "smooth",
-      });
-    }
-  }, [message]);
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Totalis Data", formData);
@@ -78,18 +66,26 @@ function ContactForm() {
           },
         }
       );
-      console.log("response", response.status);
       if (response.status == 200) {
-        setMessage({
-          show: true,
-          message: "Thankyou for submitting an enquiry",
-          status: 200,
+        toast({
+          title: "Enquiry created successfully",
+          description: "Our sales person executive will contact you soon.",
+        });
+        setFormData({
+          name: "",
+          email: "",
+          whatsapp: "",
+          pincode: "",
+          state: "",
+          city: "",
+          usage: [],
+          persona: "",
+          price: "",
         });
       } else {
-        setMessage({
-          show: true,
-          message: "oops something went wrong",
-          status: 400,
+        toast({
+          title: "Uh oh! Something went wrong.",
+          description: "There was a problem with your request.",
         });
       }
     } catch (error) {
@@ -137,20 +133,10 @@ function ContactForm() {
       return { ...prev, usage: selectedOptions };
     });
   };
-  console.log("message", message);
+
   return (
-    <div className="my-6 p-12 pt-24" ref={formRef}>
-      <div>
-        {message.show && (
-          <div
-            className={`text-white text-center font-bold py-2 ${
-              message.status === 200 ? "bg-green-500" : "bg-red-500"
-            }`}
-          >
-            {message.message}
-          </div>
-        )}
-      </div>
+    <div className=" p-12 pt-24" ref={formRef}>
+      <div></div>
       <div className="grid sm:grid-cols-2 items-start gap-16 p-8 mx-auto max-w-4xl bg-white shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] rounded-md text-[#333] font-[sans-serif]">
         <div>
           <h1 className="text-3xl font-extrabold">Submit an Enquiry</h1>
@@ -279,6 +265,7 @@ function ContactForm() {
             className="w-full rounded-md py-3 px-4 bg-gray-100 text-sm outline-[#007bff]"
             name="state"
             onChange={handleChange}
+            value={formData.state}
           >
             <option value="" disabled selected>
               Select State
@@ -312,6 +299,7 @@ function ContactForm() {
             className="w-full rounded-md py-3 px-4 bg-gray-100 text-sm outline-[#007bff]"
             onChange={handleChange}
             name="persona"
+            value={formData.persona}
           >
             <option value="" disabled selected>
               User&apos;s Persona
@@ -325,6 +313,7 @@ function ContactForm() {
             className="w-full rounded-md py-3 px-4 bg-gray-100 text-sm outline-[#007bff]"
             onChange={handleChange}
             name="price"
+            value={formData.price}
           >
             <option value="" disabled selected>
               Price Bracket in &#8377;

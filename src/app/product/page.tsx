@@ -49,7 +49,7 @@ function Page() {
   //   setProductDetail(products?.[product]?.[selectedProductName]?.[0]);
   // }, [selectedProductName, product]);
   const productDetail = products?.[product]?.[selectedProductName]?.[0];
-  console.log("product detail", productDetail, category, product);
+
   return (
     <>
       <div className="w-screen p-12 py-32 grid grid-cols-12 gap-y-12 gap-x-8">

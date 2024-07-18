@@ -56,6 +56,7 @@ function Applications() {
                 src={product.imageURL[0]}
                 alt=""
                 className="object-cover  w-full h-full overflow-hidden hover:transform hover:translate hover:scale-110 transition-all duration-700"
+                loading="lazy"
               />
             </div>
             <p className="text-center text-black">{product.name}</p>
