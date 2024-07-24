@@ -1,4 +1,3 @@
-"use client";
 import Button_Primary from "@/atoms/Buttons/Button-Primary";
 import Button_Primary_Black from "@/atoms/Buttons/Button-Primary-Black";
 import { individualProductType, products } from "@/lib/productData";
