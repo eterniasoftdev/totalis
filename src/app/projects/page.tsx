@@ -5,7 +5,7 @@ function Projects() {
   return (
     <div className="p-6  grid sm:grid-cols-6 md:grid-cols-12 md:grid-rows-* gap-y-[2rem] text-black">
       <h1 className="row-span-1 col-span-full text-4xl tracking-wider text-center mb-4 pb-4 border-b">
-        Projects
+        Totalis Projects
       </h1>
       {projectList.map((project, index) => {
         const row = Math.floor(index / 4);
@@ -21,7 +21,7 @@ function Projects() {
             <div className="w-full h-5/6 overflow-hidden group">
               <img
                 src={project.thumbnail}
-                alt=""
+                alt={project.name + " " + "Totalis by Aditya Birla Hindalco"}
                 className="object-cover  w-full h-full overflow-hidden hover:transform hover:translate hover:scale-110 transition-all duration-700"
               />
               <div className="w-full h-20 py-8 box-border  bg-indigo-800 text-white flex flex-col items-center justify-center gap-1 opacity-90 group-hover:-translate-y-24 transition-all duration-700">

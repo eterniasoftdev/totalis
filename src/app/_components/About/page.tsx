@@ -5,7 +5,7 @@ function About() {
   return (
     <div className="w-screen h-auto bg-green-600 flex flex-col items-center gap-8 text-white p-12 py-16 ">
       <h1 className="text-4xl tracking-wider text-center mb-4 pb-4 border-b">
-        About Us
+        About Totalis
       </h1>
       <div className="flex flex-col justify-start gap-4 text-sm px-8 md:px-16">
         {" "}

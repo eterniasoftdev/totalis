@@ -9,8 +9,8 @@ import { Toaster } from "@/components/ui/toaster";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Totalis",
-  description: "An Eternia Doors and Windows Product",
+  title: "Totalis by Hindalco",
+  description: "A Totalis Doors and Windows Product by Aditya Birla Hindalco",
 };
 
 const structuredData = {
