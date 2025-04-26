@@ -8,6 +8,7 @@ export interface storeIndividualInterface {
   address: string;
   contactNumber: string;
   describe: string;
+  email: string;
 }
 export interface cityDataInterface {
   [key: string]: Array<storeIndividualInterface>;
@@ -35,6 +36,7 @@ export const storeData: storeDataInterface = {
           address: "address detail",
           contactNumber: "7061329220",
           describe: "Describe your store",
+          email: "bharattest@gmail.com",
         },
       ],
     },
@@ -50,6 +52,7 @@ export const storeData: storeDataInterface = {
           address: "address detail",
           contactNumber: "7061329220",
           describe: "Describe your store",
+          email: "bharattest@gmail.com",
         },
       ],
     },
@@ -65,6 +68,7 @@ export const storeData: storeDataInterface = {
           address: "address detail",
           contactNumber: "7061329220",
           describe: "Describe your store",
+          email: "bharattest@gmail.com",
         },
       ],
     },
@@ -80,6 +84,7 @@ export const storeData: storeDataInterface = {
           address: "address detail",
           contactNumber: "7061329220",
           describe: "Describe your store",
+          email: "bharattest@gmail.com",
         },
       ],
     },
@@ -95,6 +100,7 @@ export const storeData: storeDataInterface = {
           address: "address detail",
           contactNumber: "7061329220",
           describe: "Describe your store",
+          email: "bharattest@gmail.com",
         },
       ],
     },
@@ -110,6 +116,7 @@ export const storeData: storeDataInterface = {
           address: "address detail",
           contactNumber: "7061329220",
           describe: "Describe your store",
+          email: "bharattest@gmail.com",
         },
       ],
     },
@@ -125,6 +132,7 @@ export const storeData: storeDataInterface = {
           address: "address detail",
           contactNumber: "7061329220",
           describe: "Describe your store",
+          email: "bharattest@gmail.com",
         },
       ],
     },
@@ -140,6 +148,7 @@ export const storeData: storeDataInterface = {
           address: "address detail",
           contactNumber: "7061329220",
           describe: "Describe your store",
+          email: "bharattest@gmail.com",
         },
       ],
     },

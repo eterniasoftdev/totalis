@@ -2,7 +2,7 @@
 import React from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import { AgentType } from "../page";
+import { AgentType } from "../page2";
 // delete Leaflet.Icon.Default.prototype._getIconUrl;
 type props = {
   agents: AgentType[];

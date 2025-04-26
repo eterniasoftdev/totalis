@@ -1,79 +1,93 @@
-"use client";
-import React from "react";
-// import AgentMap from "./_components/AgentMap";
-import { LatLngExpression } from "leaflet";
-import dynamic from "next/dynamic";
-// const AgentMap = dynamic(() => import("./_components/AgentMap"), {
-//   ssr: false,
-// });
-export type AgentType = {
-  name: string;
-  latlng: LatLngExpression;
-  description: string;
-};
-const agents: AgentType[] = [
-  {
-    name: "Bharat Polyzone Private Limited",
-    latlng: [28.536795394594428, 77.15845149999998],
-    description: "Delhi",
-  },
-  {
-    name: "JK COATING CENTRE",
-    latlng: [19.164785000000006, 72.85322660000001],
-    description: "Mumbai",
-  },
-  {
-    name: "STRONGHOLD TECHNICAL SERVICES",
-    latlng: [22.32498480000001, 73.14569929999999],
-    description: "Gujarat",
-  },
-  {
-    name: "POLARIS INFRASOLUTIONS PVT LTD",
-    latlng: [13.054177700000016, 80.24629009999998],
-    description: "Chennai",
-  },
-  {
-    name: "HARDWARE WORLD",
-    latlng: [15.922096438576768, 80.76101639999997],
-    description: "Vijayawada",
-  },
-  {
-    name: "METAL HOUSE",
-    latlng: [17.412453260202874, 78.40804555000001],
-    description: "Hyderabad",
-  },
-  {
-    name: "CHHATTISGARH WOOD INDUSTRIES",
-    latlng: [21.889680200000015, 83.3549837],
-    description: "Raigarh",
-  },
-  {
-    name: "Sadi Ram Vishwa Prakash",
-    latlng: [26.845002200000014, 80.92745929999998],
-    description: "Lucknow",
-  },
-  // Add more agents as needed
-];
+import React, { useState, useEffect } from "react";
+import { city, state } from "@/lib/stateData";
+import { storeData, storeIndividualInterface } from "@/lib/data";
+import StoreGrid from "@/components/StoreGrid";
+import FilterSection from "@/components/FilterSection";
+
 function Page() {
-  const defaultProps = {
-    center: {
-      lat: 10.99835602,
-      lng: 77.01502627,
-    },
-    zoom: 11,
-  };
-  // return (
-  //   <div>
-  //     <AgentMap agents={agents} />
-  //   </div>
-  // );
+  const [selectedStates, setSelectedStates] = useState<string[]>([]);
+  const [selectedCities, setSelectedCities] = useState<string[]>([]);
+  const [cityList, setCityList] = useState<string[]>([]);
+  const [storeList, setStoreList] = useState<storeIndividualInterface[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
+
+  const stateList = Object.keys(storeData.India);
+
+  useEffect(() => {
+    const fetchStores = () => {
+      setLoading(true);
+
+      // Simulate API call with timeout
+      setTimeout(() => {
+        let filteredStores: storeIndividualInterface[] = [];
+        const country = "India";
+
+        if (selectedStates.length === 0) {
+          // If no state is selected, show all stores
+          Object.keys(storeData).forEach((country) => {
+            Object.keys(storeData[country]).forEach((stateName) => {
+              Object.keys(storeData[country][stateName]).forEach((cityName) => {
+                filteredStores = [
+                  ...filteredStores,
+                  ...storeData[country][stateName][cityName],
+                ];
+              });
+            });
+          });
+        } else {
+          // Filter by selected states
+          selectedStates.forEach((stateName) => {
+            if (selectedCities.length === 0) {
+              // If no cities selected, show all cities in selected states
+              Object.keys(storeData?.[country]?.[stateName] || {}).forEach(
+                (cityName) => {
+                  filteredStores = [
+                    ...filteredStores,
+                    ...(storeData?.[country]?.[stateName]?.[cityName] || []),
+                  ];
+                }
+              );
+            } else {
+              // Filter by selected cities
+              selectedCities.forEach((cityName) => {
+                if (storeData?.[country]?.[stateName]?.[cityName]) {
+                  filteredStores = [
+                    ...filteredStores,
+                    ...(storeData?.[country]?.[stateName]?.[cityName] || []),
+                  ];
+                }
+              });
+            }
+          });
+        }
+
+        setStoreList(filteredStores);
+        setLoading(false);
+      }, 600); // Simulate loading delay for better UX
+    };
+
+    fetchStores();
+  }, [selectedStates, selectedCities]);
+
   return (
-    <div className="w-screen h-screen pt-28 ">
-      <img
-        src="/img/location-map.png"
-        alt=""
-        className="object-contain h-full w-full"
-      />
+    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        <div className="animate-fadeIn">
+          <FilterSection
+            stateList={stateList}
+            cityList={cityList}
+            selectedStates={selectedStates}
+            selectedCities={selectedCities}
+            setCityList={setCityList}
+            setSelectedStates={setSelectedStates}
+            setSelectedCities={setSelectedCities}
+            city={city}
+            state={state}
+          />
+
+          <StoreGrid storeList={storeList} loading={loading} />
+        </div>
+      </div>
     </div>
   );
 }
