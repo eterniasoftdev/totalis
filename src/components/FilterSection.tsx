@@ -13,7 +13,7 @@ interface FilterSectionProps {
   city: { [key: number]: string[] };
   state: string[];
 }
-
+console.log("Commit the uncommits");
 const FilterSection: React.FC<FilterSectionProps> = ({
   stateList,
   cityList,
