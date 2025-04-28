@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useEffect } from "react";
 import { city, state } from "@/lib/stateData";
 import { storeData, storeIndividualInterface } from "@/lib/data";
