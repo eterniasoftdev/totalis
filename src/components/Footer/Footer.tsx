@@ -41,7 +41,7 @@ function Footer() {
               <i className="text-2xl">
                 <FaLocationPin />
               </i>
-              <p className="text-xl">Dealer Locator</p>
+              <p className="text-xl">Locate Us</p>
             </Link>
             <div className="mt-8">
               <h1 className="text-xl">Follow us</h1>
@@ -66,16 +66,14 @@ function Footer() {
       <div className="border-t"></div>
       <div className="flex flex-row gap-12 justify-between">
         <ul className="flex gap-8 text-gray-300 list-disc">
-            <li className="hover:underline hover:underline-offset-2 cursor-pointer">
-          <Link href="/static/t&c">
+          <li className="hover:underline hover:underline-offset-2 cursor-pointer">
+            <Link href="/static/t&c">
               General Terms and Conditions of Sale and Guarantees
-          </Link>
-            </li>
-            <li className="hover:underline hover:underline-offset-2 cursor-pointer">
-          <Link href="/static/privacy">
-              Privacy & Legal Notices
-          </Link>
-            </li>
+            </Link>
+          </li>
+          <li className="hover:underline hover:underline-offset-2 cursor-pointer">
+            <Link href="/static/privacy">Privacy & Legal Notices</Link>
+          </li>
         </ul>
         <div className="bg-white p-2">
           <Link href="/">

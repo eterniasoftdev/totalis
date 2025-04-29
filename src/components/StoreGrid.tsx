@@ -1,7 +1,7 @@
 import React from "react";
 import { storeIndividualInterface } from "../lib/data";
 import StoreCard from "./StoreCard";
-import { Store, Search as MapSearch } from "lucide-react";
+import { Search as MapSearch } from "lucide-react";
 
 interface StoreGridProps {
   storeList: storeIndividualInterface[];
@@ -10,6 +10,12 @@ interface StoreGridProps {
 
 const StoreGrid: React.FC<StoreGridProps> = ({ storeList, loading }) => {
   console.log("Store list in store grid", storeList);
+
+  // Sort stores alphabetically by storeName
+  const sortedStores = [...storeList].sort((a, b) =>
+    a.storeName.localeCompare(b.storeName, undefined, { sensitivity: "base" })
+  );
+
   if (loading) {
     return (
       <div className="w-full flex flex-col items-center justify-center py-16 animate-fadeIn">
@@ -26,7 +32,7 @@ const StoreGrid: React.FC<StoreGridProps> = ({ storeList, loading }) => {
     );
   }
 
-  if (!storeList.length) {
+  if (!sortedStores.length) {
     return (
       <div className="w-full flex flex-col items-center justify-center py-16 animate-fadeIn">
         <div className="bg-gradient-to-br from-gray-50 to-blue-50 p-8 rounded-2xl shadow-inner mb-6">
@@ -45,7 +51,7 @@ const StoreGrid: React.FC<StoreGridProps> = ({ storeList, loading }) => {
 
   return (
     <div className="grid grid-cols-12 gap-6">
-      {storeList.map((store, index) => (
+      {sortedStores.map((store, index) => (
         <StoreCard
           key={`${store.storeName}-${index}`}
           store={store}

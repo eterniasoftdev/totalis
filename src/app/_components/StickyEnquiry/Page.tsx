@@ -8,7 +8,7 @@ function StickyNav() {
     <div className="fixed bottom-4 right-4 z-50">
       <Link href={"/contact"}>
         <Button_Primary_Black
-          text="Submit an Enquiry"
+          text="Contact Us"
           className="w-56 px-4 bg-indigo-800"
         />
         {/* <div className="h-10 w-10 rounded-full bg-stone-200 flex items-center justify-center cursor-pointer">
