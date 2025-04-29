@@ -12,7 +12,24 @@ function Page() {
   const [storeList, setStoreList] = useState<storeIndividualInterface[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
 
+  // Get all state names from storeData
   const stateList = Object.keys(storeData.India);
+
+  // Update cityList when selectedStates change
+  useEffect(() => {
+    let newCityList: string[] = [];
+    if (selectedStates.length > 0) {
+      selectedStates.forEach((stateName) => {
+        // Find the state index in the imported state array to get cities from city object
+        const stateIndex = state.indexOf(stateName);
+        if (stateIndex >= 0 && city[stateIndex]) {
+          newCityList = [...newCityList, ...city[stateIndex]];
+        }
+      });
+      newCityList = Array.from(new Set(newCityList)); // Remove duplicates
+    }
+    setCityList(newCityList);
+  }, [selectedStates]);
 
   useEffect(() => {
     const fetchStores = () => {
@@ -25,14 +42,16 @@ function Page() {
 
         if (selectedStates.length === 0) {
           // If no state is selected, show all stores
-          Object.keys(storeData).forEach((country) => {
-            Object.keys(storeData[country]).forEach((stateName) => {
-              Object.keys(storeData[country][stateName]).forEach((cityName) => {
-                filteredStores = [
-                  ...filteredStores,
-                  ...storeData[country][stateName][cityName],
-                ];
-              });
+          Object.keys(storeData).forEach((countryName) => {
+            Object.keys(storeData[countryName]).forEach((stateName) => {
+              Object.keys(storeData[countryName][stateName]).forEach(
+                (cityName) => {
+                  filteredStores = [
+                    ...filteredStores,
+                    ...storeData[countryName][stateName][cityName],
+                  ];
+                }
+              );
             });
           });
         } else {
@@ -40,28 +59,28 @@ function Page() {
           selectedStates.forEach((stateName) => {
             if (selectedCities.length === 0) {
               // If no cities selected, show all cities in selected states
-              Object.keys(storeData?.[country]?.[stateName] || {}).forEach(
+              Object.keys(storeData[country][stateName] || {}).forEach(
                 (cityName) => {
                   filteredStores = [
                     ...filteredStores,
-                    ...(storeData?.[country]?.[stateName]?.[cityName] || []),
+                    ...(storeData[country][stateName][cityName] || []),
                   ];
                 }
               );
             } else {
               // Filter by selected cities
               selectedCities.forEach((cityName) => {
-                if (storeData?.[country]?.[stateName]?.[cityName]) {
+                if (storeData[country][stateName][cityName]) {
                   filteredStores = [
                     ...filteredStores,
-                    ...(storeData?.[country]?.[stateName]?.[cityName] || []),
+                    ...storeData[country][stateName][cityName],
                   ];
                 }
               });
             }
           });
         }
-
+        console.log("Filtered Stores...", filteredStores);
         setStoreList(filteredStores);
         setLoading(false);
       }, 600); // Simulate loading delay for better UX
@@ -73,7 +92,7 @@ function Page() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-        <div className="animate-fadeIn">
+        <div className="animate-fadeIn mt-10">
           <FilterSection
             stateList={stateList}
             cityList={cityList}

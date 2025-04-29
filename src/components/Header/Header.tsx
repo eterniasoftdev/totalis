@@ -1,21 +1,11 @@
 "use client";
-import React, { Dispatch, SetStateAction, useState } from "react";
-import {
-  IoIosSearch,
-  IoIosPin,
-  IoIosArrowDown,
-  IoIosClose,
-} from "react-icons/io";
-import { FaUser } from "react-icons/fa";
+import React, { useState } from "react";
+import { IoIosPin, IoIosArrowDown } from "react-icons/io";
 import Link from "next/link";
 // import Image from "next/image";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { usePathname } from "next/navigation";
 import { DialogBasicDetail } from "./_components/FormDialog";
-interface HeaderInterface {
-  setIsChecked: Dispatch<SetStateAction<boolean>>;
-  isChecked: boolean;
-}
 
 function Header() {
   const pathname = usePathname();
@@ -67,7 +57,7 @@ function Header() {
   return (
     <>
       {/* Desktop Header */}
-      <div className={`w - screen ${isChecked ? "md:h-screen" : ""}`}>
+      <div className={`w - screen`}>
         <div
           className={`fixed py-4 px-8 box-conatiner flex flex-row gap-x-16 w-screen bg-white z-50 text-black ${
             !isScrolledDown ? "flex" : isOrigin ? "flex md:hidden" : "flex"
@@ -78,7 +68,7 @@ function Header() {
               <img
                 src="/img/Totalis_Logo_crop.png"
                 alt="Totalis Logo"
-                className="min-h-20 max-h-20 max-w-32 min-w-32 object-contain "
+                className="h-12 w-auto object-contain"
                 // style={{
                 //   objectFit: "cover",
                 // }}

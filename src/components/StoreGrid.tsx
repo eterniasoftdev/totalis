@@ -9,6 +9,7 @@ interface StoreGridProps {
 }
 
 const StoreGrid: React.FC<StoreGridProps> = ({ storeList, loading }) => {
+  console.log("Store list in store grid", storeList);
   if (loading) {
     return (
       <div className="w-full flex flex-col items-center justify-center py-16 animate-fadeIn">

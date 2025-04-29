@@ -58,7 +58,7 @@ const FilterSection: React.FC<FilterSectionProps> = ({
   const hasFilters = selectedStates.length > 0 || selectedCities.length > 0;
 
   return (
-    <div className="w-full max-w-4xl mx-auto bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 rounded-xl shadow-lg p-8 md:p-10 mb-12 animate-fadeIn relative overflow-hidden">
+    <div className="w-full max-w-4xl mx-auto bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 rounded-xl shadow-lg p-8 md:p-10 mb-12 animate-fadeIn relative overflow-visible">
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500"></div>
 
       <div className="flex items-center justify-between mb-8">

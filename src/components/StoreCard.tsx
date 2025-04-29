@@ -1,5 +1,5 @@
 import React from "react";
-import { MapPin, Phone, Building2 } from "lucide-react";
+import { MapPin, Building2, Mail } from "lucide-react";
 import { storeIndividualInterface } from "../lib/data";
 
 interface StoreCardProps {
@@ -8,14 +8,12 @@ interface StoreCardProps {
 }
 
 const StoreCard: React.FC<StoreCardProps> = ({ store, index }) => {
+  console.log("Storinggggg index...", store);
   return (
     <div
       className="relative col-span-12 sm:col-span-6 md:col-span-4 bg-white rounded-xl shadow-md overflow-hidden transition-all duration-500 hover:shadow-xl group"
       style={{
         animationDelay: `${index * 0.05}s`,
-        animation: "fadeInUp 0.5s ease forwards",
-        opacity: 0,
-        transform: "translateY(20px)",
       }}
     >
       <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500"></div>
@@ -58,7 +56,7 @@ const StoreCard: React.FC<StoreCardProps> = ({ store, index }) => {
           {store.email && (
             <div className="flex items-center">
               <div className="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
-                <Phone size={18} className="text-blue-600" />
+                <Mail size={18} className="text-blue-600" />
               </div>
               <span className="text-sm text-gray-700 font-medium">
                 {store.email}

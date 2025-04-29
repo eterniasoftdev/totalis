@@ -111,11 +111,16 @@ const config = {
               "linear-gradient(to right,#FFFFFF 0%, #FFFFFF 100%)",
           },
         },
+        fadeInUp: {
+          "0%": { opacity: "0", transform: "translateY(20px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         progress: "progressAnimation 4s ease infinite",
+        fadeInUp: "fadeInUp 0.5s ease forwards",
       },
     },
   },
