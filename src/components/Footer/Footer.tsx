@@ -37,7 +37,7 @@ function Footer() {
         </div>
         <div className="flex flex-col justify-between sm:w-1/4">
           <div className="flex flex-col sm:gap-4">
-            <Link href="/store" className="flex gap-4">
+            <Link href="/locate-us" className="flex gap-4">
               <i className="text-2xl">
                 <FaLocationPin />
               </i>

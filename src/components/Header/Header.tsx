@@ -238,7 +238,7 @@ function Header() {
           </Link> */}
             <DialogBasicDetail />
             <Link href="/contact">Contact Us</Link>
-            <Link href="/store">Dealer Locator</Link>
+            <Link href="/locate-us">Dealer Locator</Link>
           </div>
         </div>
       </div>
