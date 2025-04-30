@@ -135,7 +135,10 @@ function Header() {
           </div>
 
           <div className="hidden md:flex gap-x-8 flex-row ml-auto text-2xl font-semibold">
-            <Link href="/store" className="flex flex-row gap-2 items-center">
+            <Link
+              href="/locate-us"
+              className="flex flex-row gap-2 items-center"
+            >
               <IoIosPin />
               <p className="text-lg">Locator Us</p>
             </Link>
