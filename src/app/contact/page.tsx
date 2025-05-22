@@ -1,142 +1,12 @@
+// components/ContactForm.tsx
 "use client";
-import React, { useEffect, useRef, useState } from "react";
-import MultiSelectDropdown from "@/atoms/Form/MultiSelectDropdown";
-import { city, state } from "@/lib/stateData";
-import axios from "axios";
+import React from "react";
 import Link from "next/link";
-import { useToast } from "@/components/ui/use-toast";
-const options = [
-  { label: "Want To Buy", value: "Want To Buy" },
-  { label: "Become a Partner", value: "Become a Partner" },
-];
+import { TotalisForm } from "@/components/TotalisForm";
 
-interface formType {
-  name: string;
-  email: string;
-  whatsapp: string;
-  pincode: string;
-  state: string;
-  city: string;
-  usage: string[];
-  persona: string;
-  price: string;
-}
 function ContactForm() {
-  const [formData, setFormData] = useState<formType>({
-    name: "",
-    email: "",
-    whatsapp: "",
-    pincode: "",
-    state: "",
-    city: "",
-    usage: [],
-    persona: "",
-    price: "",
-  });
-  const { toast } = useToast();
-
-  const formRef = useRef<HTMLDivElement | null>(null);
-  const [cityList, setCityList] = useState<string[]>([]);
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log("Totalis Data", formData);
-    const reqBody = {
-      First_Name: formData.name.split(" ")?.[0] || "NA",
-      Last_Name: formData.name.split(" ")?.[1] || "NA",
-      Email: formData.email,
-      Mobile: formData.whatsapp,
-      Zip_Code: formData.pincode,
-      State_Name: formData.state,
-      City: formData.city,
-      User_Persona: formData.persona,
-      Price_Bracket: formData.price,
-      Requirement: formData.usage.map((el) => String(el)),
-      Lead_SubSource: "Totalis Website",
-    };
-    console.log("reqbody", reqBody);
-
-    try {
-      const response = await axios.post(
-        "https://api.eterniasoft.in/api/v1/totalis/createContact",
-        reqBody,
-        {
-          headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZxemV5eWFqc2ExNTJtYXNta25zZGF3eHpsIiwiaWF0IjoxNzEwMjQ2NTMwLCJleHAiOjE3NDE3ODI1MzB9.FZs-WBCuURHOIpBaEVA_l8cKlmqGcrUQf8iDaHimiik",
-          },
-        }
-      );
-      if (response.status == 200) {
-        toast({
-          title: "Enquiry created successfully",
-          description: "Our sales person executive will contact you soon.",
-        });
-        setFormData({
-          name: "",
-          email: "",
-          whatsapp: "",
-          pincode: "",
-          state: "",
-          city: "",
-          usage: [],
-          persona: "",
-          price: "",
-        });
-      } else {
-        toast({
-          title: "Uh oh! Something went wrong.",
-          description: "There was a problem with your request.",
-        });
-      }
-    } catch (error) {
-      console.error("Error submitting form:", error);
-    }
-  };
-
-  const handleChange = (
-    e: React.ChangeEvent<
-      | HTMLInputElement
-      | HTMLSelectElement
-      | HTMLTextAreaElement
-      | HTMLSelectElement
-    >
-  ) => {
-    const { name, value, type, checked, options } =
-      e.target as typeof e.target & {
-        name: string;
-        value: string;
-        type: string;
-        checked?: boolean;
-        options?: HTMLOptionsCollection | undefined;
-      };
-
-    if (type === "checkbox") {
-      const selectedOptions = options
-        ? Array.from(options)
-            .filter((option) => option.selected)
-            .map((option) => option.value)
-        : [];
-      setFormData((prevData) => ({ ...prevData, [name]: selectedOptions }));
-    } else if (type === "radio" && checked) {
-      setFormData((prevData) => ({ ...prevData, [name]: value }));
-    } else {
-      setFormData((prevData) => ({ ...prevData, [name]: value }));
-    }
-    console.log("formdata", name, value);
-    if (name == "state") {
-      setCityList(city[state.indexOf(value)] || []);
-      setFormData((prevData) => ({ ...prevData, city: "" }));
-    }
-  };
-  const handleMultiSelectChange = (selectedOptions: string[]) => {
-    setFormData((prev) => {
-      return { ...prev, usage: selectedOptions };
-    });
-  };
-
   return (
-    <div className=" p-12 pt-24" ref={formRef}>
-      <div></div>
+    <div className="p-12 pt-24">
       <div className="grid sm:grid-cols-2 items-start gap-16 p-8 mx-auto max-w-4xl bg-white shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] rounded-md text-[#333] font-[sans-serif]">
         <div>
           <h1 className="text-3xl font-extrabold">Submit an Enquiry</h1>
@@ -162,7 +32,7 @@ function ContactForm() {
                   </svg>
                 </div>
                 <a
-                  href="javascript:void(0)"
+                  href="mailto:hil-totalis@adityabirla.com"
                   className="text-[#78B533] text-sm ml-3"
                 >
                   <small className="block">Mail</small>
@@ -174,26 +44,11 @@ function ContactForm() {
           <div className="mt-12">
             <h2 className="text-lg font-extrabold">Socials</h2>
             <ul className="flex mt-3 space-x-4">
-              {/* <li className="bg-[#e6e6e6cf] h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-                <a href="javascript:void(0)">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20px"
-                    height="20px"
-                    fill="#007bff"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M6.812 13.937H9.33v9.312c0 .414.335.75.75.75l4.007.001a.75.75 0 0 0 .75-.75v-9.312h2.387a.75.75 0 0 0 .744-.657l.498-4a.75.75 0 0 0-.744-.843h-2.885c.113-2.471-.435-3.202 1.172-3.202 1.088-.13 2.804.421 2.804-.75V.909a.75.75 0 0 0-.648-.743A26.926 26.926 0 0 0 15.071 0c-7.01 0-5.567 7.772-5.74 8.437H6.812a.75.75 0 0 0-.75.75v4c0 .414.336.75.75.75zm.75-3.999h2.518a.75.75 0 0 0 .75-.75V6.037c0-2.883 1.545-4.536 4.24-4.536.878 0 1.686.043 2.242.087v2.149c-.402.205-3.976-.884-3.976 2.697v2.755c0 .414.336.75.75.75h2.786l-.312 2.5h-2.474a.75.75 0 0 0-.75.75V22.5h-2.505v-9.312a.75.75 0 0 0-.75-.75H7.562z"
-                      data-original="#000000"
-                    />
-                  </svg>
-                </a>
-              </li> */}
               <li className="bg-[#e6e6e6cf] h-10 w-10 rounded-full flex items-center justify-center shrink-0">
                 <a
                   href="https://in.linkedin.com/company/totalisbyhindalco"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -209,148 +64,10 @@ function ContactForm() {
                   </svg>
                 </a>
               </li>
-              {/* <li className="bg-[#e6e6e6cf] h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-                <a href="javascript:void(0)">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20px"
-                    height="20px"
-                    fill="#007bff"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M12 9.3a2.7 2.7 0 1 0 0 5.4 2.7 2.7 0 0 0 0-5.4Zm0-1.8a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Zm5.85-.225a1.125 1.125 0 1 1-2.25 0 1.125 1.125 0 0 1 2.25 0ZM12 4.8c-2.227 0-2.59.006-3.626.052-.706.034-1.18.128-1.618.299a2.59 2.59 0 0 0-.972.633 2.601 2.601 0 0 0-.634.972c-.17.44-.265.913-.298 1.618C4.805 9.367 4.8 9.714 4.8 12c0 2.227.006 2.59.052 3.626.034.705.128 1.18.298 1.617.153.392.333.674.632.972.303.303.585.484.972.633.445.172.918.267 1.62.3.993.047 1.34.052 3.626.052 2.227 0 2.59-.006 3.626-.052.704-.034 1.178-.128 1.617-.298.39-.152.674-.333.972-.632.304-.303.485-.585.634-.972.171-.444.266-.918.299-1.62.047-.993.052-1.34.052-3.626 0-2.227-.006-2.59-.052-3.626-.034-.704-.128-1.18-.299-1.618a2.619 2.619 0 0 0-.633-.972 2.595 2.595 0 0 0-.972-.634c-.44-.17-.914-.265-1.618-.298-.993-.047-1.34-.052-3.626-.052ZM12 3c2.445 0 2.75.009 3.71.054.958.045 1.61.195 2.185.419A4.388 4.388 0 0 1 19.49 4.51c.457.45.812.994 1.038 1.595.222.573.373 1.227.418 2.185.042.96.054 1.265.054 3.71 0 2.445-.009 2.75-.054 3.71-.045.958-.196 1.61-.419 2.185a4.395 4.395 0 0 1-1.037 1.595 4.44 4.44 0 0 1-1.595 1.038c-.573.222-1.227.373-2.185.418-.96.042-1.265.054-3.71.054-2.445 0-2.75-.009-3.71-.054-.958-.045-1.61-.196-2.185-.419A4.402 4.402 0 0 1 4.51 19.49a4.414 4.414 0 0 1-1.037-1.595c-.224-.573-.374-1.227-.419-2.185C3.012 14.75 3 14.445 3 12c0-2.445.009-2.75.054-3.71s.195-1.61.419-2.185A4.392 4.392 0 0 1 4.51 4.51c.45-.458.994-.812 1.595-1.037.574-.224 1.226-.374 2.185-.419C9.25 3.012 9.555 3 12 3Z"></path>
-                  </svg>
-                </a>
-              </li> */}
             </ul>
           </div>
         </div>
-        <form onSubmit={handleSubmit} className="ml-auo space-y-4">
-          <input
-            type="text"
-            name="name"
-            placeholder="Name"
-            value={formData.name}
-            onChange={handleChange}
-            className="w-full rounded-md py-3 px-4 bg-gray-100 text-sm outline-[#007bff]"
-            required
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            value={formData.email}
-            onChange={handleChange}
-            className="w-full rounded-md py-3 px-4 bg-gray-100 text-sm outline-[#007bff]"
-          />
-          <input
-            type="text"
-            name="whatsapp"
-            placeholder="WhatsApp No"
-            value={formData.whatsapp}
-            onChange={handleChange}
-            className="w-full rounded-md py-3 px-4 bg-gray-100 text-sm outline-[#007bff]"
-            required
-          />
-          <input
-            type="text"
-            name="pincode"
-            placeholder="Pin code"
-            value={formData.pincode}
-            onChange={handleChange}
-            className="w-full rounded-md py-3 px-4 bg-gray-100 text-sm outline-[#007bff]"
-            required
-          />
-          <select
-            className="w-full rounded-md py-3 px-4 bg-gray-100 text-sm outline-[#007bff]"
-            name="state"
-            onChange={handleChange}
-            value={formData.state}
-          >
-            <option value="" disabled selected>
-              Select State
-            </option>
-            {state.map((data, index) => (
-              <option value={data} className="text-black" key={index}>
-                {data}
-              </option>
-            ))}
-          </select>
-          <select
-            value={formData.city || ""}
-            className="w-full rounded-md py-3 px-4 bg-gray-100 text-sm outline-[#007bff]"
-            name="city"
-            onChange={handleChange}
-          >
-            <option value="" disabled selected>
-              Select City
-            </option>
-            {cityList.map((data, index) => (
-              <option value={data} className="text-black" key={index}>
-                {data}
-              </option>
-            ))}
-          </select>
-          <MultiSelectDropdown
-            options={options}
-            onChange={handleMultiSelectChange}
-          />
-          <select
-            className="w-full rounded-md py-3 px-4 bg-gray-100 text-sm outline-[#007bff]"
-            onChange={handleChange}
-            name="persona"
-            value={formData.persona}
-          >
-            <option value="" disabled selected>
-              User&apos;s Persona
-            </option>
-            <option value="Fabricator">Fabricator</option>
-            <option value="Dealer">Dealer</option>
-            <option value="Builder/Developer">Builder/Developer</option>
-            <option value="Others">Other</option>
-          </select>
-          <select
-            className="w-full rounded-md py-3 px-4 bg-gray-100 text-sm outline-[#007bff]"
-            onChange={handleChange}
-            name="price"
-            value={formData.price}
-          >
-            <option value="" disabled selected>
-              Price Bracket in &#8377;
-            </option>
-            <option value="<400">Less than 400</option>
-            <option value="400-500">400-500</option>
-            <option value="500-600">500-600</option>
-            <option value="600-800">600-800</option>
-            <option value=">800">Greater than 800</option>
-          </select>
-          <div className="flex items-start">
-            <input
-              type="checkbox"
-              name="agree"
-              id="agree"
-              className="mr-2"
-              required
-            />
-            <label htmlFor="agree" className="text-sm text-gray-600">
-              I agree with the{" "}
-              <Link href={"static/privacy"} className="underline">
-                privacy policy
-              </Link>{" "}
-              and{" "}
-              <Link href={"static/t&c"} className="underline">
-                terms and conditions{" "}
-              </Link>{" "}
-              of Totalis
-            </label>
-          </div>
-          <button
-            type="submit"
-            className="text-white bg-[#78B533] hover:bg-blue-600 font-semibold rounded-md text-sm px-4 py-3 w-full"
-          >
-            Send
-          </button>
-        </form>
+        <TotalisForm onSuccess={() => {}} />
       </div>
     </div>
   );

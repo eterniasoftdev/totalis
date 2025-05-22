@@ -140,7 +140,7 @@ function Header() {
               className="flex flex-row gap-2 items-center"
             >
               <IoIosPin />
-              <p className="text-lg">Locator Us</p>
+              <p className="text-lg">Locate Us</p>
             </Link>
           </div>
           <div
